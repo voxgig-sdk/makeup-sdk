@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "http://makeup-api.herokuapp.com/"
+      }
+      description: "Search makeup products by brand, price, product category, tags, and more. Provides visual representation of JSON data."
+      servers: [
+        {
+          description: "Production server"
+          url: "http://makeup-api.herokuapp.com/api/v1"
+        }
+      ]
+      title: "Makeup API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

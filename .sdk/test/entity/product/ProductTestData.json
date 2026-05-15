@@ -1,0 +1,101 @@
+{
+  "existing": {
+    "product": {
+      "PRODUCT00": {
+        "api_featured_image": "sd2",
+        "brand": "sd3",
+        "category": "sd4",
+        "colour_name": "sd5",
+        "created_at": "sd6",
+        "currency": "sd7",
+        "description": "sd8",
+        "hex_value": "sd9",
+        "id": "PRODUCT00",
+        "image_link": "sdb",
+        "name": "sdc",
+        "price": "sdd",
+        "price_sign": "sde",
+        "product_api_url": "sdf",
+        "product_color": [],
+        "product_link": "se1",
+        "product_type": "se2",
+        "rating": 227,
+        "tag_list": [],
+        "updated_at": "se5",
+        "website_link": "se6"
+      },
+      "PRODUCT01": {
+        "api_featured_image": "s1a4",
+        "brand": "s1a5",
+        "category": "s1a6",
+        "colour_name": "s1a7",
+        "created_at": "s1a8",
+        "currency": "s1a9",
+        "description": "s1aa",
+        "hex_value": "s1ab",
+        "id": "PRODUCT01",
+        "image_link": "s1ad",
+        "name": "s1ae",
+        "price": "s1af",
+        "price_sign": "s1b0",
+        "product_api_url": "s1b1",
+        "product_color": [],
+        "product_link": "s1b3",
+        "product_type": "s1b4",
+        "rating": 437,
+        "tag_list": [],
+        "updated_at": "s1b7",
+        "website_link": "s1b8"
+      },
+      "PRODUCT02": {
+        "api_featured_image": "s276",
+        "brand": "s277",
+        "category": "s278",
+        "colour_name": "s279",
+        "created_at": "s27a",
+        "currency": "s27b",
+        "description": "s27c",
+        "hex_value": "s27d",
+        "id": "PRODUCT02",
+        "image_link": "s27f",
+        "name": "s280",
+        "price": "s281",
+        "price_sign": "s282",
+        "product_api_url": "s283",
+        "product_color": [],
+        "product_link": "s285",
+        "product_type": "s286",
+        "rating": 647,
+        "tag_list": [],
+        "updated_at": "s289",
+        "website_link": "s28a"
+      }
+    }
+  },
+  "new": {
+    "product": {
+      "product_ref01": {
+        "api_featured_image": "s348",
+        "brand": "s349",
+        "category": "s34a",
+        "colour_name": "s34b",
+        "created_at": "s34c",
+        "currency": "s34d",
+        "description": "s34e",
+        "hex_value": "s34f",
+        "image_link": "s351",
+        "name": "s352",
+        "price": "s353",
+        "price_sign": "s354",
+        "product_api_url": "s355",
+        "product_color": [],
+        "product_link": "s357",
+        "product_type": "s358",
+        "rating": 857,
+        "tag_list": [],
+        "updated_at": "s35b",
+        "website_link": "s35c"
+      }
+    }
+  }
+}

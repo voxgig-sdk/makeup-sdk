@@ -1,0 +1,260 @@
+# Entity: product
+
+main: kit: entity: product: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "api_featured_image"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "brand"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "category"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "colour_name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "created_at"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "currency"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "description"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "hex_value"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "id"
+      req: false
+      type: "`$INTEGER`"
+    }
+    {
+      name: "image_link"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "name"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "price"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "price_sign"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "product_api_url"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "product_color"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "product_link"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "product_type"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "rating"
+      req: false
+      type: "`$NUMBER`"
+    }
+    {
+      name: "tag_list"
+      req: false
+      type: "`$ARRAY`"
+    }
+    {
+      name: "updated_at"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "website_link"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "product"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "maybelline"
+                kind: "query"
+                name: "brand"
+                orig: "brand"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: 10
+                kind: "query"
+                name: "price_greater_than"
+                orig: "price_greater_than"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+              {
+                example: 20
+                kind: "query"
+                name: "price_less_than"
+                orig: "price_less_than"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+              {
+                example: "powder"
+                kind: "query"
+                name: "product_category"
+                orig: "product_category"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "vegan"
+                kind: "query"
+                name: "product_tag"
+                orig: "product_tag"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: "lipstick"
+                kind: "query"
+                name: "product_type"
+                orig: "product_type"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                example: 4
+                kind: "query"
+                name: "rating_greater_than"
+                orig: "rating_greater_than"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+              {
+                example: 5
+                kind: "query"
+                name: "rating_less_than"
+                orig: "rating_less_than"
+                reqd: false
+                type: "`$NUMBER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/products.json"
+          parts: [
+            "products.json"
+          ]
+          select: {
+            exist: [
+              "brand"
+              "price_greater_than"
+              "price_less_than"
+              "product_category"
+              "product_tag"
+              "product_type"
+              "rating_greater_than"
+              "rating_less_than"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            params: [
+              {
+                example: 1048
+                kind: "param"
+                name: "id"
+                orig: "id"
+                reqd: true
+                type: "`$INTEGER`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/products/{id}.json"
+          parts: [
+            "products"
+            "{id}.json"
+          ]
+          select: {
+            "$action": "id"
+            exist: [
+              "id"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  relations: {
+    ancestors: [
+      [
+        "product"
+      ]
+    ]
+  }
+
+
+
+}

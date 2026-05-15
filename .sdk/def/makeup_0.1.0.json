@@ -1,0 +1,379 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Makeup API",
+    "description": "Search makeup products by brand, price, product category, tags, and more. Provides visual representation of JSON data.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "http://makeup-api.herokuapp.com/"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://makeup-api.herokuapp.com/api/v1",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/products.json": {
+      "get": {
+        "summary": "Get all makeup products",
+        "description": "Retrieve a list of makeup products with optional filtering by brand, price, product type, category, tags, and other attributes.",
+        "operationId": "getAllProducts",
+        "tags": [
+          "Products"
+        ],
+        "parameters": [
+          {
+            "name": "brand",
+            "in": "query",
+            "description": "Filter products by brand name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "maybelline"
+          },
+          {
+            "name": "product_type",
+            "in": "query",
+            "description": "Filter products by product type (e.g., lipstick, foundation, eyeliner, eyeshadow, blush, bronzer, mascara, nail_polish)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "blush",
+                "bronzer",
+                "eyebrow",
+                "eyeliner",
+                "eyeshadow",
+                "foundation",
+                "lip_liner",
+                "lipstick",
+                "mascara",
+                "nail_polish"
+              ]
+            },
+            "example": "lipstick"
+          },
+          {
+            "name": "product_category",
+            "in": "query",
+            "description": "Filter products by category (e.g., powder, cream, pencil, liquid)",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "powder"
+          },
+          {
+            "name": "product_tags",
+            "in": "query",
+            "description": "Filter products by tags (e.g., vegan, organic, natural, gluten_free, canadian). Multiple tags can be comma separated.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "example": "vegan"
+          },
+          {
+            "name": "price_greater_than",
+            "in": "query",
+            "description": "Filter products with price greater than specified value",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "format": "float"
+            },
+            "example": 10
+          },
+          {
+            "name": "price_less_than",
+            "in": "query",
+            "description": "Filter products with price less than specified value",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "format": "float"
+            },
+            "example": 20
+          },
+          {
+            "name": "rating_greater_than",
+            "in": "query",
+            "description": "Filter products with rating greater than specified value (0-5)",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "format": "float",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "example": 4
+          },
+          {
+            "name": "rating_less_than",
+            "in": "query",
+            "description": "Filter products with rating less than specified value (0-5)",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "format": "float",
+              "minimum": 0,
+              "maximum": 5
+            },
+            "example": 5
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with list of makeup products",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Product"
+                  }
+                },
+                "example": [
+                  {
+                    "id": 1048,
+                    "brand": "maybelline",
+                    "name": "Maybelline Fit Me Matte + Poreless Foundation",
+                    "price": "7.99",
+                    "price_sign": "$",
+                    "currency": "USD",
+                    "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/4f75b2e39c8e192af00d5c6d0e7d2a98_ra,w158,h184_pa,w158,h184.jpeg",
+                    "product_link": "https://well.ca/products/maybelline-fit-me-matte-poreless_88837.html",
+                    "website_link": "https://well.ca",
+                    "description": "Maybelline Fit Me Matte + Poreless Foundation is a lightweight, oil-free foundation that provides a natural, matte finish.",
+                    "rating": 4.5,
+                    "category": "powder",
+                    "product_type": "foundation",
+                    "tag_list": [
+                      "Vegan",
+                      "Oil Free"
+                    ],
+                    "created_at": "2018-07-08T23:45:08.056Z",
+                    "updated_at": "2018-07-09T00:53:23.301Z",
+                    "product_api_url": "http://makeup-api.herokuapp.com/api/v1/products/1048.json",
+                    "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/048/original/open-uri20180708-4-13okqci?1531094614",
+                    "product_colors": [
+                      {
+                        "hex_value": "#F4C797",
+                        "colour_name": "Porcelain"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - invalid query parameters"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/products/{id}.json": {
+      "get": {
+        "summary": "Get a single makeup product by ID",
+        "description": "Retrieve detailed information about a specific makeup product using its unique identifier.",
+        "operationId": "getProductById",
+        "tags": [
+          "Products"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Unique identifier of the product",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            },
+            "example": 1048
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with product details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Product"
+                },
+                "example": {
+                  "id": 1048,
+                  "brand": "maybelline",
+                  "name": "Maybelline Fit Me Matte + Poreless Foundation",
+                  "price": "7.99",
+                  "price_sign": "$",
+                  "currency": "USD",
+                  "image_link": "https://d3t32hsnjxo7q6.cloudfront.net/i/4f75b2e39c8e192af00d5c6d0e7d2a98_ra,w158,h184_pa,w158,h184.jpeg",
+                  "product_link": "https://well.ca/products/maybelline-fit-me-matte-poreless_88837.html",
+                  "website_link": "https://well.ca",
+                  "description": "Maybelline Fit Me Matte + Poreless Foundation is a lightweight, oil-free foundation that provides a natural, matte finish.",
+                  "rating": 4.5,
+                  "category": "powder",
+                  "product_type": "foundation",
+                  "tag_list": [
+                    "Vegan",
+                    "Oil Free"
+                  ],
+                  "created_at": "2018-07-08T23:45:08.056Z",
+                  "updated_at": "2018-07-09T00:53:23.301Z",
+                  "product_api_url": "http://makeup-api.herokuapp.com/api/v1/products/1048.json",
+                  "api_featured_image": "//s3.amazonaws.com/donovanbailey/products/api_featured_images/000/001/048/original/open-uri20180708-4-13okqci?1531094614",
+                  "product_colors": [
+                    {
+                      "hex_value": "#F4C797",
+                      "colour_name": "Porcelain"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Product not found"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Product": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "Unique identifier for the product"
+          },
+          "brand": {
+            "type": "string",
+            "description": "Brand name of the product",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "description": "Name of the product"
+          },
+          "price": {
+            "type": "string",
+            "description": "Price of the product as a string",
+            "nullable": true
+          },
+          "price_sign": {
+            "type": "string",
+            "description": "Currency symbol",
+            "nullable": true
+          },
+          "currency": {
+            "type": "string",
+            "description": "Currency code (e.g., USD, CAD, GBP)",
+            "nullable": true
+          },
+          "image_link": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the product image"
+          },
+          "product_link": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the product page on the retailer's website"
+          },
+          "website_link": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the retailer's website"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the product",
+            "nullable": true
+          },
+          "rating": {
+            "type": "number",
+            "format": "float",
+            "description": "Average rating of the product (0-5)",
+            "nullable": true,
+            "minimum": 0,
+            "maximum": 5
+          },
+          "category": {
+            "type": "string",
+            "description": "Category of the product (e.g., powder, cream, liquid)",
+            "nullable": true
+          },
+          "product_type": {
+            "type": "string",
+            "description": "Type of the product (e.g., foundation, lipstick, mascara)"
+          },
+          "tag_list": {
+            "type": "array",
+            "description": "List of tags associated with the product (e.g., Vegan, Organic, Gluten Free)",
+            "items": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the product was added to the database"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Timestamp when the product was last updated"
+          },
+          "product_api_url": {
+            "type": "string",
+            "format": "uri",
+            "description": "API URL to fetch this specific product"
+          },
+          "api_featured_image": {
+            "type": "string",
+            "description": "Featured image URL for API display"
+          },
+          "product_colors": {
+            "type": "array",
+            "description": "Available color variants of the product",
+            "items": {
+              "$ref": "#/components/schemas/ProductColor"
+            }
+          }
+        }
+      },
+      "ProductColor": {
+        "type": "object",
+        "properties": {
+          "hex_value": {
+            "type": "string",
+            "description": "Hexadecimal color code",
+            "pattern": "^#[0-9A-Fa-f]{6}$"
+          },
+          "colour_name": {
+            "type": "string",
+            "description": "Name of the color variant"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Products",
+      "description": "Operations related to makeup products"
+    }
+  ]
+}
