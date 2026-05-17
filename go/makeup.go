@@ -1,10 +1,10 @@
 package voxgigmakeupsdk
 
 import (
-	"github.com/voxgig-sdk/makeup-sdk/core"
-	"github.com/voxgig-sdk/makeup-sdk/entity"
-	"github.com/voxgig-sdk/makeup-sdk/feature"
-	_ "github.com/voxgig-sdk/makeup-sdk/utility"
+	"github.com/voxgig-sdk/makeup-sdk/go/core"
+	"github.com/voxgig-sdk/makeup-sdk/go/entity"
+	"github.com/voxgig-sdk/makeup-sdk/go/feature"
+	_ "github.com/voxgig-sdk/makeup-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

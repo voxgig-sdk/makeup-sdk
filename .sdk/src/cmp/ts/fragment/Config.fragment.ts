@@ -29,7 +29,7 @@ class Config {
 
 
   options = {
-    base: 'http://makeup-api.herokuapp.com/api/v1',
+    base: '$$main.kit.info.servers.0.url$$',
 
     'AUTHBLOCK'headers: 'HEADERS',
 

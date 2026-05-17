@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/makeup-sdk/core"
+	"github.com/voxgig-sdk/makeup-sdk/go/core"
 )
 
 type BaseFeature struct {

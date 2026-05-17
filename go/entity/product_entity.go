@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/makeup-sdk/core"
+	"github.com/voxgig-sdk/makeup-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/makeup-sdk/go/utility/struct"
 )
 
 type ProductEntity struct {

@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/makeup-sdk"
-	"github.com/voxgig-sdk/makeup-sdk/core"
+	sdk "github.com/voxgig-sdk/makeup-sdk/go"
+	"github.com/voxgig-sdk/makeup-sdk/go/core"
 )
 
 func TestProductDirect(t *testing.T) {
