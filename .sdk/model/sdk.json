@@ -16,7 +16,17 @@
           }
         ],
         "title": "Makeup API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Search cosmetic products across brands by category, price, rating, and tags such as vegan or cruelty-free",
+        "homepage": "http://makeup-api.herokuapp.com/",
+        "docs_url": "http://makeup-api.herokuapp.com/",
+        "license_short": "No license stated by the API author",
+        "license_md": "- The Makeup API documentation does not publish an explicit license or terms of use.\n- No attribution requirements are documented; treat product data as third-party content owned by the respective brands.\n- The service is hosted on Heroku and may be paused or retired without notice.",
+        "about_md": "The [Makeup API](http://makeup-api.herokuapp.com/) is a free, read-only REST service that exposes a catalogue of cosmetic products across a range of mainstream brands. It is a community-maintained project hosted on Heroku and listed on [Free Public APIs](https://freepublicapis.com/makeup-api).\n\nWhat you get from the API:\n\n- A single `GET /api/v1/products.json` endpoint that returns a JSON array of products.\n- Filtering by `brand`, `product_type` (e.g. lipstick, eyeliner, foundation, mascara, nail polish, blush, bronzer, eyebrow, eyeshadow, lip liner), and `product_category` (subcategory such as lip gloss).\n- Filtering by `product_tags` (comma-separated, e.g. `vegan`, `cruelty free`).\n- Numeric range filters: `price_greater_than`, `price_less_than`, `rating_greater_than`, `rating_less_than`.\n\nThe API requires no authentication or API key and supports CORS for use directly from browser clients. As a hobby Heroku deployment it can be slow to respond after periods of inactivity, and uptime is not guaranteed.",
+        "entity_desc": {
+          "product": "A cosmetic product record returned by `GET /api/v1/products.json`, filterable by brand, product type, category, tags, price range, and rating range."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -24,7 +34,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "product": {

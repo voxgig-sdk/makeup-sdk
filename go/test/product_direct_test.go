@@ -93,14 +93,12 @@ func productDirectSetup(mockres any) *productDirectSetupResult {
 	env := envOverride(map[string]any{
 		"MAKEUP_TEST_PRODUCT_ENTID": map[string]any{},
 		"MAKEUP_TEST_LIVE":    "FALSE",
-		"MAKEUP_APIKEY":       "NONE",
 	})
 
 	live := env["MAKEUP_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["MAKEUP_APIKEY"],
 		}
 		client := sdk.NewMakeupSDK(mergedOpts)
 

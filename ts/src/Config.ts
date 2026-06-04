@@ -38,10 +38,6 @@ class Config {
   options = {
     base: 'http://makeup-api.herokuapp.com/api/v1',
 
-    auth: {
-      prefix: 'Bearer',
-    },
-
     headers: {
       "content-type": "application/json"
     },
