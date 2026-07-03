@@ -10,7 +10,7 @@ The TypeScript SDK for the Makeup API — a type-safe, entity-oriented client wi
 
 ## Install
 ```bash
-npm install makeup
+npm install @voxgig-sdk/makeup
 ```
 ## Tutorial: your first API call
 

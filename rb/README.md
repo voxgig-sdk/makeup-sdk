@@ -10,13 +10,13 @@ The Ruby SDK for the Makeup API — an entity-oriented client using idiomatic Ru
 
 ## Install
 ```bash
-gem install makeup-sdk
+gem install voxgig-sdk-makeup
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "makeup-sdk"
+gem "voxgig-sdk-makeup"
 ```
 
 Then run:

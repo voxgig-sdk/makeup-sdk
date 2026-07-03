@@ -10,7 +10,7 @@ The Python SDK for the Makeup API — an entity-oriented client following Python
 
 ## Install
 ```bash
-pip install makeup-sdk
+pip install voxgig-sdk-makeup
 ```
 
 Or install from source:
