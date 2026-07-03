@@ -63,12 +63,14 @@ function product_direct_setup(mockres)
   local env = runner.env_override({
     ["MAKEUP_TEST_PRODUCT_ENTID"] = {},
     ["MAKEUP_TEST_LIVE"] = "FALSE",
+    ["MAKEUP_APIKEY"] = "NONE",
   })
 
   local live = env["MAKEUP_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["MAKEUP_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

@@ -1,21 +1,8 @@
 # Makeup SDK
 
-Search cosmetic products across brands by category, price, rating, and tags such as vegan or cruelty-free
+Makeup API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Makeup API
-
-The [Makeup API](http://makeup-api.herokuapp.com/) is a free, read-only REST service that exposes a catalogue of cosmetic products across a range of mainstream brands. It is a community-maintained project hosted on Heroku and listed on [Free Public APIs](https://freepublicapis.com/makeup-api).
-
-What you get from the API:
-
-- A single `GET /api/v1/products.json` endpoint that returns a JSON array of products.
-- Filtering by `brand`, `product_type` (e.g. lipstick, eyeliner, foundation, mascara, nail polish, blush, bronzer, eyebrow, eyeshadow, lip liner), and `product_category` (subcategory such as lip gloss).
-- Filtering by `product_tags` (comma-separated, e.g. `vegan`, `cruelty free`).
-- Numeric range filters: `price_greater_than`, `price_less_than`, `rating_greater_than`, `rating_less_than`.
-
-The API requires no authentication or API key and supports CORS for use directly from browser clients. As a hobby Heroku deployment it can be slow to respond after periods of inactivity, and uptime is not guaranteed.
 
 ## Try it
 
@@ -49,29 +36,31 @@ gem install makeup-sdk
 luarocks install makeup-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { MakeupSDK } from 'makeup'
 
-const client = new MakeupSDK({})
+const client = new MakeupSDK({
+  apikey: process.env.MAKEUP_APIKEY,
+})
 
 // List all products
 const products = await client.Product().list()
+console.log(products.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -101,7 +90,7 @@ The API exposes one entity:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Product** | A cosmetic product record returned by `GET /api/v1/products.json`, filterable by brand, product type, category, tags, price range, and rating range. | `/products.json` |
+| **Product** |  | `/products.json` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -111,12 +100,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from makeup_sdk import MakeupSDK
 
-client = MakeupSDK({})
+client = MakeupSDK({
+    "apikey": os.environ.get("MAKEUP_APIKEY"),
+})
 
 # List all products
-products, err = client.Product(None).list(None, None)
+products, err = client.Product().list()
+print(products)
 ```
 
 ### PHP
@@ -125,10 +118,13 @@ products, err = client.Product(None).list(None, None)
 <?php
 require_once 'makeup_sdk.php';
 
-$client = new MakeupSDK([]);
+$client = new MakeupSDK([
+    "apikey" => getenv("MAKEUP_APIKEY"),
+]);
 
 // List all products
-[$products, $err] = $client->Product(null)->list(null, null);
+[$products, $err] = $client->Product()->list();
+print_r($products);
 ```
 
 ### Golang
@@ -136,10 +132,13 @@ $client = new MakeupSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/makeup-sdk/go"
 
-client := sdk.NewMakeupSDK(map[string]any{})
+client := sdk.NewMakeupSDK(map[string]any{
+    "apikey": os.Getenv("MAKEUP_APIKEY"),
+})
 
 // List all products
 products, err := client.Product(nil).List(nil, nil)
+fmt.Println(products)
 ```
 
 ### Ruby
@@ -147,10 +146,13 @@ products, err := client.Product(nil).List(nil, nil)
 ```ruby
 require_relative "Makeup_sdk"
 
-client = MakeupSDK.new({})
+client = MakeupSDK.new({
+  "apikey" => ENV["MAKEUP_APIKEY"],
+})
 
 # List all products
-products, err = client.Product(nil).list(nil, nil)
+products, err = client.Product().list
+puts products
 ```
 
 ### Lua
@@ -158,10 +160,13 @@ products, err = client.Product(nil).list(nil, nil)
 ```lua
 local sdk = require("makeup_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("MAKEUP_APIKEY"),
+})
 
 -- List all products
-local products, err = client:Product(nil):list(nil, nil)
+local products, err = client:Product():list()
+print(products)
 ```
 
 ## Unit testing in offline mode
@@ -180,25 +185,21 @@ const result = await client.Product().load({ id: 'test01' })
 ### Python
 
 ```python
-client = MakeupSDK.test(None, None)
-result, err = client.Product(None).load(
-    {"id": "test01"}, None
-)
+client = MakeupSDK.test()
+result, err = client.Product().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = MakeupSDK::test(null, null);
-[$result, $err] = $client->Product(null)->load(
-    ["id" => "test01"], null
-);
+$client = MakeupSDK::test();
+[$result, $err] = $client->Product()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Product(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -207,19 +208,15 @@ result, err := client.Product(nil).Load(
 ### Ruby
 
 ```ruby
-client = MakeupSDK.test(nil, nil)
-result, err = client.Product(nil).load(
-  { "id" => "test01" }, nil
-)
+client = MakeupSDK.test
+result, err = client.Product().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Product(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Product():load({ id = "test01" })
 ```
 
 ## How it works
@@ -323,14 +320,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Makeup API
-
-- Upstream: [http://makeup-api.herokuapp.com/](http://makeup-api.herokuapp.com/)
-
-- The Makeup API documentation does not publish an explicit license or terms of use.
-- No attribution requirements are documented; treat product data as third-party content owned by the respective brands.
-- The service is hosted on Heroku and may be paused or retired without notice.
 
 ---
 

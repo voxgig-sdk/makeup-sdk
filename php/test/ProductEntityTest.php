@@ -86,6 +86,7 @@ function product_basic_setup($extra)
         "MAKEUP_TEST_PRODUCT_ENTID" => $idmap,
         "MAKEUP_TEST_LIVE" => "FALSE",
         "MAKEUP_TEST_EXPLAIN" => "FALSE",
+        "MAKEUP_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -97,6 +98,7 @@ function product_basic_setup($extra)
     if ($env["MAKEUP_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
+                "apikey" => $env["MAKEUP_APIKEY"],
             ],
             $extra ?? [],
         ]);

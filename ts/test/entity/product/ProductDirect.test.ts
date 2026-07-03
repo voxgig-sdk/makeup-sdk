@@ -79,12 +79,14 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'MAKEUP_TEST_PRODUCT_ENTID': {},
     'MAKEUP_TEST_LIVE': 'FALSE',
+    'MAKEUP_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.MAKEUP_TEST_LIVE
 
   if (live) {
     const client = new MakeupSDK({
+      apikey: env.MAKEUP_APIKEY,
     })
 
     let idmap: any = env['MAKEUP_TEST_PRODUCT_ENTID']

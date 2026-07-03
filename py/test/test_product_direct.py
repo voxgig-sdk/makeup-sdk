@@ -61,12 +61,14 @@ def _product_direct_setup(mockres):
     env = runner.env_override({
         "MAKEUP_TEST_PRODUCT_ENTID": {},
         "MAKEUP_TEST_LIVE": "FALSE",
+        "MAKEUP_APIKEY": "NONE",
     })
 
     live = env.get("MAKEUP_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
+            "apikey": env.get("MAKEUP_APIKEY"),
         }
         client = MakeupSDK(merged_opts)
         return {

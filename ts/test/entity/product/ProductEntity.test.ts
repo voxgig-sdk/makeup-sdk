@@ -113,6 +113,7 @@ function basicSetup(extra?: any) {
     'MAKEUP_TEST_PRODUCT_ENTID': idmap,
     'MAKEUP_TEST_LIVE': 'FALSE',
     'MAKEUP_TEST_EXPLAIN': 'FALSE',
+    'MAKEUP_APIKEY': 'NONE',
   })
 
   idmap = env['MAKEUP_TEST_PRODUCT_ENTID']
@@ -122,6 +123,7 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new MakeupSDK(merge([
       {
+        apikey: env.MAKEUP_APIKEY,
       },
       extra
     ]))

@@ -92,6 +92,7 @@ def _product_basic_setup(extra):
         "MAKEUP_TEST_PRODUCT_ENTID": idmap,
         "MAKEUP_TEST_LIVE": "FALSE",
         "MAKEUP_TEST_EXPLAIN": "FALSE",
+        "MAKEUP_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,6 +103,7 @@ def _product_basic_setup(extra):
     if env.get("MAKEUP_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
+                "apikey": env.get("MAKEUP_APIKEY"),
             },
             extra or {},
         ])
