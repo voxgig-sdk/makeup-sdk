@@ -245,6 +245,9 @@ func (sdk *MakeupSDK) Direct(fetchargs map[string]any) (map[string]any, error) {
 }
 
 
+// Product returns a Product entity bound to this client.
+// Idiomatic usage: client.Product(nil).List(nil, nil) or
+// client.Product(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *MakeupSDK) Product(data map[string]any) MakeupEntity {
 	return NewProductEntityFunc(sdk, data)
 }

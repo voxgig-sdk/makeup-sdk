@@ -14,9 +14,6 @@ local function make_config()
     },
     options = {
       base = "http://makeup-api.herokuapp.com/api/v1",
-      auth = {
-        prefix = "Bearer",
-      },
       headers = {
         ["content-type"] = "application/json",
       },
@@ -294,6 +291,7 @@ local function make_config()
                       ["orig"] = "id",
                       ["reqd"] = true,
                       ["type"] = "`$INTEGER`",
+                      ["index$"] = 0,
                     },
                   },
                 },

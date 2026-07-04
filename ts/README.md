@@ -9,9 +9,12 @@ The TypeScript SDK for the Makeup API — a type-safe, entity-oriented client wi
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/makeup
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/makeup-sdk/releases](https://github.com/voxgig-sdk/makeup-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { MakeupSDK } from 'makeup'
+import { MakeupSDK } from '@voxgig-sdk/makeup'
 
-const client = new MakeupSDK({
-  apikey: process.env.MAKEUP_APIKEY,
-})
+const client = new MakeupSDK()
 ```
 
 ### 2. List products
 
 ```ts
-const result = await client.Product().list()
+const result = await client.product.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -81,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = MakeupSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.product.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -89,7 +90,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new MakeupSDK({ apikey: '...' })
+const client = new MakeupSDK()
 const testClient = client.tester()
 ```
 
@@ -98,7 +99,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.product
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -125,7 +126,6 @@ const logger = {
 }
 
 const client = new MakeupSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -136,7 +136,6 @@ Create a `.env.local` file at the project root:
 
 ```
 MAKEUP_TEST_LIVE=TRUE
-MAKEUP_APIKEY=<your-key>
 ```
 
 Then run:
@@ -154,7 +153,6 @@ cd ts && npm test
 
 ```ts
 new MakeupSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -165,7 +163,6 @@ new MakeupSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -288,7 +285,7 @@ API path: `/products.json`
 
 ### Product
 
-Create an instance: `const product = client.Product()`
+Create an instance: `const product = client.product`
 
 #### Operations
 
@@ -325,7 +322,7 @@ Create an instance: `const product = client.Product()`
 #### Example: List
 
 ```ts
-const products = await client.Product().list()
+const products = await client.product.list()
 ```
 
 
@@ -386,7 +383,7 @@ makeup/
 Import the SDK from the package root:
 
 ```ts
-import { MakeupSDK } from 'makeup'
+import { MakeupSDK } from '@voxgig-sdk/makeup'
 ```
 
 ### Entity state
@@ -396,11 +393,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const product = client.product
+await product.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// product.data() now returns the loaded product data
+// product.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration
