@@ -26,9 +26,11 @@ import { MakeupSDK } from '@voxgig-sdk/makeup'
 
 const client = new MakeupSDK()
 
-// List all products
-const products = await client.product.list()
-console.log(products.data)
+// List all products (returns Product[])
+const products = await client.Product().list()
+for (const product of products) {
+  console.log(product)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -83,9 +85,10 @@ from makeup_sdk import MakeupSDK
 
 client = MakeupSDK()
 
-# List all products
-products = client.product.list()
-print(products)
+# List all products (returns a list, raises on error)
+products = client.Product().list({})
+for product in products:
+    print(product)
 ```
 
 ### PHP
@@ -96,8 +99,8 @@ require_once 'makeup_sdk.php';
 
 $client = new MakeupSDK();
 
-// List all products (throws on error)
-$products = $client->product()->list();
+// List all products (returns an array; throws on error)
+$products = $client->Product()->list();
 print_r($products);
 ```
 
@@ -120,8 +123,8 @@ require_relative "Makeup_sdk"
 
 client = MakeupSDK.new
 
-# List all products
-products = client.product.list
+# List all products (returns an Array; raises on error)
+products = client.Product.list
 puts products
 ```
 
@@ -133,7 +136,7 @@ local sdk = require("makeup_sdk")
 local client = sdk.new()
 
 -- List all products
-local products, err = client:product():list()
+local products, err = client:Product():list()
 print(products)
 ```
 
@@ -146,22 +149,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = MakeupSDK.test()
-const result = await client.product.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const product = await client.Product().load({ id: 1 })
+// product is a bare Product populated with mock data
+console.log(product)
 ```
 
 ### Python
 
 ```python
 client = MakeupSDK.test()
-result = client.product.load({"id": "test01"})
+product = client.Product().load({"id": "test01"})
+print(product)
 ```
 
 ### PHP
 
 ```php
-$client = MakeupSDK::test();
-$result = $client->product()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = MakeupSDK::test([
+    "entity" => ["product" => ["test01" => ["id" => "test01"]]],
+]);
+$product = $client->Product()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -176,15 +184,18 @@ result, err := client.Product(nil).Load(
 ### Ruby
 
 ```ruby
-client = MakeupSDK.test
-result = client.product.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = MakeupSDK.test({
+  "entity" => { "product" => { "test01" => { "id" => "test01" } } },
+})
+product = client.Product.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:product():load({ id = "test01" })
+local result, err = client:Product():load({ id = "test01" })
 ```
 
 ## How it works
@@ -232,6 +243,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

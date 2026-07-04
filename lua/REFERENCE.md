@@ -83,7 +83,7 @@ same parameters as `direct()`.
 ## ProductEntity
 
 ```lua
-local product = client:product(nil)
+local product = client:Product(nil)
 ```
 
 ### Fields
@@ -119,7 +119,7 @@ local product = client:product(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:product():list()
+local results, err = client:Product():list()
 ```
 
 ### Common Methods
