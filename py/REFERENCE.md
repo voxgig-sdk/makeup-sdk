@@ -87,36 +87,36 @@ product = client.Product()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `api_featured_image` | ``$STRING`` | No |  |
-| `brand` | ``$STRING`` | No |  |
-| `category` | ``$STRING`` | No |  |
-| `colour_name` | ``$STRING`` | No |  |
-| `created_at` | ``$STRING`` | No |  |
-| `currency` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `hex_value` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `image_link` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `price` | ``$STRING`` | No |  |
-| `price_sign` | ``$STRING`` | No |  |
-| `product_api_url` | ``$STRING`` | No |  |
-| `product_color` | ``$ARRAY`` | No |  |
-| `product_link` | ``$STRING`` | No |  |
-| `product_type` | ``$STRING`` | No |  |
-| `rating` | ``$NUMBER`` | No |  |
-| `tag_list` | ``$ARRAY`` | No |  |
-| `updated_at` | ``$STRING`` | No |  |
-| `website_link` | ``$STRING`` | No |  |
+| `api_featured_image` | `str` | No |  |
+| `brand` | `str` | No |  |
+| `category` | `str` | No |  |
+| `colour_name` | `str` | No |  |
+| `created_at` | `str` | No |  |
+| `currency` | `str` | No |  |
+| `description` | `str` | No |  |
+| `hex_value` | `str` | No |  |
+| `id` | `int` | No |  |
+| `image_link` | `str` | No |  |
+| `name` | `str` | No |  |
+| `price` | `str` | No |  |
+| `price_sign` | `str` | No |  |
+| `product_api_url` | `str` | No |  |
+| `product_color` | `list` | No |  |
+| `product_link` | `str` | No |  |
+| `product_type` | `str` | No |  |
+| `rating` | `float` | No |  |
+| `tag_list` | `list` | No |  |
+| `updated_at` | `str` | No |  |
+| `website_link` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Product().list({})
+results = client.Product().list()
 for product in results:
     print(product)
 ```

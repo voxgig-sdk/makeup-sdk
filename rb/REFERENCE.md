@@ -8,7 +8,7 @@ Complete API reference for the Makeup Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'makeup_sdk'
+require_relative 'Makeup_sdk'
 
 client = MakeupSDK.new(options)
 ```
@@ -93,36 +93,36 @@ product = client.Product
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `api_featured_image` | ``$STRING`` | No |  |
-| `brand` | ``$STRING`` | No |  |
-| `category` | ``$STRING`` | No |  |
-| `colour_name` | ``$STRING`` | No |  |
-| `created_at` | ``$STRING`` | No |  |
-| `currency` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `hex_value` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `image_link` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `price` | ``$STRING`` | No |  |
-| `price_sign` | ``$STRING`` | No |  |
-| `product_api_url` | ``$STRING`` | No |  |
-| `product_color` | ``$ARRAY`` | No |  |
-| `product_link` | ``$STRING`` | No |  |
-| `product_type` | ``$STRING`` | No |  |
-| `rating` | ``$NUMBER`` | No |  |
-| `tag_list` | ``$ARRAY`` | No |  |
-| `updated_at` | ``$STRING`` | No |  |
-| `website_link` | ``$STRING`` | No |  |
+| `api_featured_image` | `String` | No |  |
+| `brand` | `String` | No |  |
+| `category` | `String` | No |  |
+| `colour_name` | `String` | No |  |
+| `created_at` | `String` | No |  |
+| `currency` | `String` | No |  |
+| `description` | `String` | No |  |
+| `hex_value` | `String` | No |  |
+| `id` | `Integer` | No |  |
+| `image_link` | `String` | No |  |
+| `name` | `String` | No |  |
+| `price` | `String` | No |  |
+| `price_sign` | `String` | No |  |
+| `product_api_url` | `String` | No |  |
+| `product_color` | `Array` | No |  |
+| `product_link` | `String` | No |  |
+| `product_type` | `String` | No |  |
+| `rating` | `Float` | No |  |
+| `tag_list` | `Array` | No |  |
+| `updated_at` | `String` | No |  |
+| `website_link` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Product.list(nil)
+results = client.Product.list
 ```
 
 ### Common Methods

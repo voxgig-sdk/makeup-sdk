@@ -45,11 +45,11 @@ $client = MakeupSDK::test();
 
 Create a new `ProductEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): MakeupUtility`
 
 Return a copy of the SDK utility object.
 
@@ -92,53 +92,53 @@ $product = $client->Product();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `api_featured_image` | ``$STRING`` | No |  |
-| `brand` | ``$STRING`` | No |  |
-| `category` | ``$STRING`` | No |  |
-| `colour_name` | ``$STRING`` | No |  |
-| `created_at` | ``$STRING`` | No |  |
-| `currency` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `hex_value` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `image_link` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `price` | ``$STRING`` | No |  |
-| `price_sign` | ``$STRING`` | No |  |
-| `product_api_url` | ``$STRING`` | No |  |
-| `product_color` | ``$ARRAY`` | No |  |
-| `product_link` | ``$STRING`` | No |  |
-| `product_type` | ``$STRING`` | No |  |
-| `rating` | ``$NUMBER`` | No |  |
-| `tag_list` | ``$ARRAY`` | No |  |
-| `updated_at` | ``$STRING`` | No |  |
-| `website_link` | ``$STRING`` | No |  |
+| `api_featured_image` | `string` | No |  |
+| `brand` | `string` | No |  |
+| `category` | `string` | No |  |
+| `colour_name` | `string` | No |  |
+| `created_at` | `string` | No |  |
+| `currency` | `string` | No |  |
+| `description` | `string` | No |  |
+| `hex_value` | `string` | No |  |
+| `id` | `int` | No |  |
+| `image_link` | `string` | No |  |
+| `name` | `string` | No |  |
+| `price` | `string` | No |  |
+| `price_sign` | `string` | No |  |
+| `product_api_url` | `string` | No |  |
+| `product_color` | `array` | No |  |
+| `product_link` | `string` | No |  |
+| `product_type` | `string` | No |  |
+| `rating` | `float` | No |  |
+| `tag_list` | `array` | No |  |
+| `updated_at` | `string` | No |  |
+| `website_link` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Product()->list([]);
+$results = $client->Product()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -147,7 +147,7 @@ Set the entity match criteria.
 Create a new `ProductEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

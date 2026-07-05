@@ -97,27 +97,27 @@ product := client.Product(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `api_featured_image` | ``$STRING`` | No |  |
-| `brand` | ``$STRING`` | No |  |
-| `category` | ``$STRING`` | No |  |
-| `colour_name` | ``$STRING`` | No |  |
-| `created_at` | ``$STRING`` | No |  |
-| `currency` | ``$STRING`` | No |  |
-| `description` | ``$STRING`` | No |  |
-| `hex_value` | ``$STRING`` | No |  |
-| `id` | ``$INTEGER`` | No |  |
-| `image_link` | ``$STRING`` | No |  |
-| `name` | ``$STRING`` | No |  |
-| `price` | ``$STRING`` | No |  |
-| `price_sign` | ``$STRING`` | No |  |
-| `product_api_url` | ``$STRING`` | No |  |
-| `product_color` | ``$ARRAY`` | No |  |
-| `product_link` | ``$STRING`` | No |  |
-| `product_type` | ``$STRING`` | No |  |
-| `rating` | ``$NUMBER`` | No |  |
-| `tag_list` | ``$ARRAY`` | No |  |
-| `updated_at` | ``$STRING`` | No |  |
-| `website_link` | ``$STRING`` | No |  |
+| `api_featured_image` | `string` | No |  |
+| `brand` | `string` | No |  |
+| `category` | `string` | No |  |
+| `colour_name` | `string` | No |  |
+| `created_at` | `string` | No |  |
+| `currency` | `string` | No |  |
+| `description` | `string` | No |  |
+| `hex_value` | `string` | No |  |
+| `id` | `int` | No |  |
+| `image_link` | `string` | No |  |
+| `name` | `string` | No |  |
+| `price` | `string` | No |  |
+| `price_sign` | `string` | No |  |
+| `product_api_url` | `string` | No |  |
+| `product_color` | `[]any` | No |  |
+| `product_link` | `string` | No |  |
+| `product_type` | `string` | No |  |
+| `rating` | `float64` | No |  |
+| `tag_list` | `[]any` | No |  |
+| `updated_at` | `string` | No |  |
+| `website_link` | `string` | No |  |
 
 ### Operations
 
