@@ -40,5 +40,25 @@ class Product(TypedDict, total=False):
     website_link: str
 
 
-class ProductListMatch(TypedDict):
+class ProductListMatch(TypedDict, total=False):
+    api_featured_image: str
+    brand: str
+    category: str
+    colour_name: str
+    created_at: str
+    currency: str
+    description: str
+    hex_value: str
     id: int
+    image_link: str
+    name: str
+    price: str
+    price_sign: str
+    product_api_url: str
+    product_color: list
+    product_link: str
+    product_type: str
+    rating: float
+    tag_list: list
+    updated_at: str
+    website_link: str

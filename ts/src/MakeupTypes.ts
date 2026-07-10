@@ -30,6 +30,26 @@ export interface Product {
 }
 
 export interface ProductListMatch {
-  id: number
+  api_featured_image?: string
+  brand?: string
+  category?: string
+  colour_name?: string
+  created_at?: string
+  currency?: string
+  description?: string
+  hex_value?: string
+  id?: number
+  image_link?: string
+  name?: string
+  price?: string
+  price_sign?: string
+  product_api_url?: string
+  product_color?: any[]
+  product_link?: string
+  product_type?: string
+  rating?: number
+  tag_list?: any[]
+  updated_at?: string
+  website_link?: string
 }
 

@@ -35,7 +35,27 @@ type Product struct {
 
 // ProductListMatch is the typed request payload for Product.ListTyped.
 type ProductListMatch struct {
-	Id int `json:"id"`
+	ApiFeaturedImage *string `json:"api_featured_image,omitempty"`
+	Brand *string `json:"brand,omitempty"`
+	Category *string `json:"category,omitempty"`
+	ColourName *string `json:"colour_name,omitempty"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	Currency *string `json:"currency,omitempty"`
+	Description *string `json:"description,omitempty"`
+	HexValue *string `json:"hex_value,omitempty"`
+	Id *int `json:"id,omitempty"`
+	ImageLink *string `json:"image_link,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Price *string `json:"price,omitempty"`
+	PriceSign *string `json:"price_sign,omitempty"`
+	ProductApiUrl *string `json:"product_api_url,omitempty"`
+	ProductColor *[]any `json:"product_color,omitempty"`
+	ProductLink *string `json:"product_link,omitempty"`
+	ProductType *string `json:"product_type,omitempty"`
+	Rating *float64 `json:"rating,omitempty"`
+	TagList *[]any `json:"tag_list,omitempty"`
+	UpdatedAt *string `json:"updated_at,omitempty"`
+	WebsiteLink *string `json:"website_link,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -436,14 +433,17 @@
           "url": "http://makeup-api.herokuapp.com/"
         },
         "description": "Search makeup products by brand, price, product category, tags, and more. Provides visual representation of JSON data.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "http://makeup-api.herokuapp.com/api/v1"
           }
         ],
+        "summary": "Search makeup products by brand, price, product category, tags, and more.",
         "title": "Makeup API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "http://makeup-api.herokuapp.com"
       },
       "option": {},
       "target": {
@@ -496,6 +496,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -546,6 +549,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },

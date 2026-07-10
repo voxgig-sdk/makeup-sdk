@@ -15,9 +15,9 @@ main: {
           url: "http://makeup-api.herokuapp.com/api/v1"
         }
       ]
+      summary: "Search makeup products by brand, price, product category, tags, and more."
       title: "Makeup API"
       version: "1.0.0"
+      website: "http://makeup-api.herokuapp.com"
     }
   }
-}
-
