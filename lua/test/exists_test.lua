@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- Makeup SDK exists test
 
 local sdk = require("makeup_sdk")
 
