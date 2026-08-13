@@ -130,7 +130,7 @@ class MakeupConfig
             ],
             [
               'active' => true,
-              'name' => 'product_color',
+              'name' => 'product_colors',
               'req' => false,
               'type' => '`$ARRAY`',
               'index$' => 14,
@@ -262,6 +262,7 @@ class MakeupConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/products.json',
                   'parts' => [
@@ -300,6 +301,7 @@ class MakeupConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/products/{id}.json',
                   'parts' => [

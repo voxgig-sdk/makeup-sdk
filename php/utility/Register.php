@@ -23,6 +23,7 @@ require_once __DIR__ . '/MakeUrl.php';
 require_once __DIR__ . '/Param.php';
 require_once __DIR__ . '/PrepareAuth.php';
 require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
 require_once __DIR__ . '/PrepareHeaders.php';
 require_once __DIR__ . '/PrepareMethod.php';
 require_once __DIR__ . '/PrepareParams.php';
@@ -59,6 +60,8 @@ MakeupUtility::setRegistrar(function (MakeupUtility $u): void {
     $u->prepare_params = [MakeupPrepareParams::class, 'call'];
     $u->prepare_path = [MakeupPreparePath::class, 'call'];
     $u->prepare_query = [MakeupPrepareQuery::class, 'call'];
+    $u->graphql_body = [MakeupGraphql::class, 'body'];
+    $u->graphql_errors = [MakeupGraphql::class, 'errors'];
     $u->result_basic = [MakeupResultBasic::class, 'call'];
     $u->result_body = [MakeupResultBody::class, 'call'];
     $u->result_headers = [MakeupResultHeaders::class, 'call'];

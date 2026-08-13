@@ -52,7 +52,7 @@
 # @!attribute [rw] product_api_url
 #   @return [String, nil]
 #
-# @!attribute [rw] product_color
+# @!attribute [rw] product_colors
 #   @return [Array, nil]
 #
 # @!attribute [rw] product_link
@@ -87,7 +87,7 @@ Product = Struct.new(
   :price,
   :price_sign,
   :product_api_url,
-  :product_color,
+  :product_colors,
   :product_link,
   :product_type,
   :rating,
@@ -141,7 +141,7 @@ Product = Struct.new(
 # @!attribute [rw] product_api_url
 #   @return [String, nil]
 #
-# @!attribute [rw] product_color
+# @!attribute [rw] product_colors
 #   @return [Array, nil]
 #
 # @!attribute [rw] product_link
@@ -176,7 +176,7 @@ ProductListMatch = Struct.new(
   :price,
   :price_sign,
   :product_api_url,
-  :product_color,
+  :product_colors,
   :product_link,
   :product_type,
   :rating,

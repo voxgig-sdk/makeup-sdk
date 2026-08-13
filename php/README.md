@@ -125,7 +125,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = MakeupSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $product = $client->Product()->list();
 print_r($product);
 ```
@@ -224,7 +225,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -260,7 +261,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `price` |  |
 | `price_sign` |  |
 | `product_api_url` |  |
-| `product_color` |  |
+| `product_colors` |  |
 | `product_link` |  |
 | `product_type` |  |
 | `rating` |  |
@@ -305,7 +306,7 @@ Create an instance: `$product = $client->Product();`
 | `price` | `string` |  |
 | `price_sign` | `string` |  |
 | `product_api_url` | `string` |  |
-| `product_color` | `array` |  |
+| `product_colors` | `array` |  |
 | `product_link` | `string` |  |
 | `product_type` | `string` |  |
 | `rating` | `float` |  |

@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import MakeupControl
-from core.error import MakeupError
-from core.result import MakeupResult
-from core.spec import MakeupSpec
+from makeup_sdk.config import make_config
+from makeup_sdk.features import _make_feature
+from makeup_sdk.core.control import MakeupControl
+from makeup_sdk.core.error import MakeupError
+from makeup_sdk.core.result import MakeupResult
+from makeup_sdk.core.spec import MakeupSpec
 
 
 # True when this SDK was generated with the named feature.

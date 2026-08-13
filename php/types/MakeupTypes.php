@@ -29,7 +29,7 @@ class Product
     public ?string $price = null;
     public ?string $price_sign = null;
     public ?string $product_api_url = null;
-    public ?array $product_color = null;
+    public ?array $product_colors = null;
     public ?string $product_link = null;
     public ?string $product_type = null;
     public ?float $rating = null;
@@ -55,7 +55,7 @@ class ProductListMatch
     public ?string $price = null;
     public ?string $price_sign = null;
     public ?string $product_api_url = null;
-    public ?array $product_color = null;
+    public ?array $product_colors = null;
     public ?string $product_link = null;
     public ?string $product_type = null;
     public ?float $rating = null;

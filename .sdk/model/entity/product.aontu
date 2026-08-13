@@ -76,7 +76,7 @@ main: kit: entity: product: {
       type: "`$STRING`"
     }
     {
-      name: "product_color"
+      name: "product_colors"
       req: false
       type: "`$ARRAY`"
     }

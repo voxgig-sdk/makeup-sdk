@@ -218,9 +218,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local product, err = client:Product():load()
+    local product, err = client:Product():list()
     if err then error(err) end
-    -- product is the loaded record
+    -- product is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -245,7 +245,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `price` |  |
 | `price_sign` |  |
 | `product_api_url` |  |
-| `product_color` |  |
+| `product_colors` |  |
 | `product_link` |  |
 | `product_type` |  |
 | `rating` |  |
@@ -290,7 +290,7 @@ Create an instance: `local product = client:Product(nil)`
 | `price` | `string` |  |
 | `price_sign` | `string` |  |
 | `product_api_url` | `string` |  |
-| `product_color` | `table` |  |
+| `product_colors` | `table` |  |
 | `product_link` | `string` |  |
 | `product_type` | `string` |  |
 | `rating` | `number` |  |

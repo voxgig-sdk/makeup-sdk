@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# Makeup SDK exists test
 
 import pytest
 from makeup_sdk import MakeupSDK

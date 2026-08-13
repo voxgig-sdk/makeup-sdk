@@ -274,7 +274,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | `"price"` |  |
 | `"price_sign"` |  |
 | `"product_api_url"` |  |
-| `"product_color"` |  |
+| `"product_colors"` |  |
 | `"product_link"` |  |
 | `"product_type"` |  |
 | `"rating"` |  |
@@ -319,7 +319,7 @@ Create an instance: `product := client.Product(nil)`
 | `price` | `string` |  |
 | `price_sign` | `string` |  |
 | `product_api_url` | `string` |  |
-| `product_color` | `[]any` |  |
+| `product_colors` | `[]any` |  |
 | `product_link` | `string` |  |
 | `product_type` | `string` |  |
 | `rating` | `float64` |  |

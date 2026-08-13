@@ -124,7 +124,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "product_color",
+						"name": "product_colors",
 						"req": false,
 						"type": "`$ARRAY`",
 						"index$": 14,
@@ -256,6 +256,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/products.json",
 								"parts": []any{
@@ -294,6 +295,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/products/{id}.json",
 								"parts": []any{
@@ -313,7 +315,6 @@ func MakeConfig() map[string]any {
 								"index$": 1,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{

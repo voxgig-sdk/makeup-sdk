@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from makeup_sdk.utility.voxgig_struct import voxgig_struct as vs
 from makeup_sdk import MakeupSDK
-from core import helpers
+from makeup_sdk.core import helpers
 from test import runner
 
 

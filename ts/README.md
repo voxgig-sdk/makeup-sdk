@@ -35,7 +35,9 @@ const client = new MakeupSDK()
 
 ### 2. List product records
 
-`list()` resolves to an array of Product objects — iterate it directly:
+`list()` resolves to an array of Product ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const products = await client.Product().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = MakeupSDK.test()
 
 const product = await client.Product().list()
-// product is a bare entity populated with mock response data
+// product is the entity, populated with mock response data
+// — call product.data() for the record itself
 console.log(product)
 ```
 
@@ -298,7 +301,7 @@ The `prepare()` method returns:
 | `price` |  |
 | `price_sign` |  |
 | `product_api_url` |  |
-| `product_color` |  |
+| `product_colors` |  |
 | `product_link` |  |
 | `product_type` |  |
 | `rating` |  |
@@ -343,7 +346,7 @@ Create an instance: `const product = client.Product()`
 | `price` | `string` |  |
 | `price_sign` | `string` |  |
 | `product_api_url` | `string` |  |
-| `product_color` | `any[]` |  |
+| `product_colors` | `any[]` |  |
 | `product_link` | `string` |  |
 | `product_type` | `string` |  |
 | `rating` | `number` |  |

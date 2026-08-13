@@ -21,7 +21,7 @@
 ---@field price? string
 ---@field price_sign? string
 ---@field product_api_url? string
----@field product_color? table
+---@field product_colors? table
 ---@field product_link? string
 ---@field product_type? string
 ---@field rating? number
@@ -44,7 +44,7 @@
 ---@field price? string
 ---@field price_sign? string
 ---@field product_api_url? string
----@field product_color? table
+---@field product_colors? table
 ---@field product_link? string
 ---@field product_type? string
 ---@field rating? number

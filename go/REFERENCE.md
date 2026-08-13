@@ -112,7 +112,7 @@ fmt.Println(product.GetName()) // "product"
 | `price` | `string` | No |  |
 | `price_sign` | `string` | No |  |
 | `product_api_url` | `string` | No |  |
-| `product_color` | `[]any` | No |  |
+| `product_colors` | `[]any` | No |  |
 | `product_link` | `string` | No |  |
 | `product_type` | `string` | No |  |
 | `rating` | `float64` | No |  |

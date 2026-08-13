@@ -124,7 +124,7 @@ local function make_config()
           },
           {
             ["active"] = true,
-            ["name"] = "product_color",
+            ["name"] = "product_colors",
             ["req"] = false,
             ["type"] = "`$ARRAY`",
             ["index$"] = 14,
@@ -256,6 +256,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/products.json",
                 ["parts"] = {
@@ -294,6 +295,7 @@ local function make_config()
                     },
                   },
                 },
+                ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/products/{id}.json",
                 ["parts"] = {

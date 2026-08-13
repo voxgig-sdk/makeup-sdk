@@ -130,13 +130,33 @@ const product = client.Product()
 | `price` | `string` | No |  |
 | `price_sign` | `string` | No |  |
 | `product_api_url` | `string` | No |  |
-| `product_color` | `any[]` | No |  |
+| `product_colors` | `any[]` | No |  |
 | `product_link` | `string` | No |  |
 | `product_type` | `string` | No |  |
 | `rating` | `number` | No |  |
 | `tag_list` | `any[]` | No |  |
 | `updated_at` | `string` | No |  |
 | `website_link` | `string` | No |  |
+
+### Actions
+
+This entity exposes custom API actions in addition to the standard
+operations. Select one with `$action` in the call's argument; the
+remaining keys are sent as that action's payload.
+
+| Action | Route | Call |
+| --- | --- | --- |
+| `id` | `/products/{id}.json` | `client.Product().list({ $action: 'id', ... })` |
+
+An action returns that action's OWN response, which is not necessarily a
+Product record — check the API definition for its shape.
+
+```ts
+const result = await client.Product().list({
+  $action: 'id',
+  /* ...the action's own arguments */
+})
+```
 
 ### Operations
 

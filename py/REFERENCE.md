@@ -101,7 +101,7 @@ product = client.Product()
 | `price` | `str` | No |  |
 | `price_sign` | `str` | No |  |
 | `product_api_url` | `str` | No |  |
-| `product_color` | `list` | No |  |
+| `product_colors` | `list` | No |  |
 | `product_link` | `str` | No |  |
 | `product_type` | `str` | No |  |
 | `rating` | `float` | No |  |

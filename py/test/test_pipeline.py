@@ -16,11 +16,11 @@
 import pytest
 
 from makeup_sdk import MakeupSDK
-from core.error import MakeupError
-from core.result import MakeupResult
-from core.response import MakeupResponse
-from core.spec import MakeupSpec
-from feature.base_feature import MakeupBaseFeature
+from makeup_sdk.core.error import MakeupError
+from makeup_sdk.core.result import MakeupResult
+from makeup_sdk.core.response import MakeupResponse
+from makeup_sdk.core.spec import MakeupSpec
+from makeup_sdk.feature.base_feature import MakeupBaseFeature
 
 
 def _client():

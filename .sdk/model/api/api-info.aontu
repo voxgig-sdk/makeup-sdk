@@ -21,3 +21,5 @@ main: {
       website: "http://makeup-api.herokuapp.com"
     }
   }
+}
+

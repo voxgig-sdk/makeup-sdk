@@ -106,7 +106,7 @@ $product = $client->Product();
 | `price` | `string` | No |  |
 | `price_sign` | `string` | No |  |
 | `product_api_url` | `string` | No |  |
-| `product_color` | `array` | No |  |
+| `product_colors` | `array` | No |  |
 | `product_link` | `string` | No |  |
 | `product_type` | `string` | No |  |
 | `rating` | `float` | No |  |

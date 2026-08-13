@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = MakeupSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 product = client.Product.list()
 puts product
 ```
@@ -250,7 +251,7 @@ returns a result `Hash` with these keys:
 | `price` |  |
 | `price_sign` |  |
 | `product_api_url` |  |
-| `product_color` |  |
+| `product_colors` |  |
 | `product_link` |  |
 | `product_type` |  |
 | `rating` |  |
@@ -295,7 +296,7 @@ Create an instance: `product = client.Product`
 | `price` | `String` |  |
 | `price_sign` | `String` |  |
 | `product_api_url` | `String` |  |
-| `product_color` | `Array` |  |
+| `product_colors` | `Array` |  |
 | `product_link` | `String` |  |
 | `product_type` | `String` |  |
 | `rating` | `Float` |  |
