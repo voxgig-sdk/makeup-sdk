@@ -1,5 +1,8 @@
 -- Makeup SDK configuration
 
+-- Build a fresh, fully materialised config table. Every call rebuilds the
+-- whole structure, so prefer require("config_shared") unless you need a
+-- private copy you intend to mutate.
 local function make_config()
   return {
     main = {
@@ -25,151 +28,88 @@ local function make_config()
       ["product"] = {
         ["fields"] = {
           {
-            ["active"] = true,
             ["name"] = "api_featured_image",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 0,
           },
           {
-            ["active"] = true,
             ["name"] = "brand",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 1,
           },
           {
-            ["active"] = true,
             ["name"] = "category",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 2,
           },
           {
-            ["active"] = true,
             ["name"] = "colour_name",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 3,
           },
           {
-            ["active"] = true,
             ["name"] = "created_at",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 4,
           },
           {
-            ["active"] = true,
             ["name"] = "currency",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 5,
           },
           {
-            ["active"] = true,
             ["name"] = "description",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 6,
           },
           {
-            ["active"] = true,
             ["name"] = "hex_value",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 7,
           },
           {
-            ["active"] = true,
             ["name"] = "id",
-            ["req"] = false,
             ["type"] = "`$INTEGER`",
-            ["index$"] = 8,
           },
           {
-            ["active"] = true,
             ["name"] = "image_link",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 9,
           },
           {
-            ["active"] = true,
             ["name"] = "name",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 10,
           },
           {
-            ["active"] = true,
             ["name"] = "price",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 11,
           },
           {
-            ["active"] = true,
             ["name"] = "price_sign",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 12,
           },
           {
-            ["active"] = true,
             ["name"] = "product_api_url",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 13,
           },
           {
-            ["active"] = true,
             ["name"] = "product_colors",
-            ["req"] = false,
             ["type"] = "`$ARRAY`",
-            ["index$"] = 14,
           },
           {
-            ["active"] = true,
             ["name"] = "product_link",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 15,
           },
           {
-            ["active"] = true,
             ["name"] = "product_type",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 16,
           },
           {
-            ["active"] = true,
             ["name"] = "rating",
-            ["req"] = false,
             ["type"] = "`$NUMBER`",
-            ["index$"] = 17,
           },
           {
-            ["active"] = true,
             ["name"] = "tag_list",
-            ["req"] = false,
             ["type"] = "`$ARRAY`",
-            ["index$"] = 18,
           },
           {
-            ["active"] = true,
             ["name"] = "updated_at",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 19,
           },
           {
-            ["active"] = true,
             ["name"] = "website_link",
-            ["req"] = false,
             ["type"] = "`$STRING`",
-            ["index$"] = 20,
           },
         },
         ["name"] = "product",
@@ -179,79 +119,62 @@ local function make_config()
             ["name"] = "list",
             ["points"] = {
               {
-                ["active"] = true,
                 ["args"] = {
                   ["query"] = {
                     {
-                      ["active"] = true,
                       ["example"] = "maybelline",
                       ["kind"] = "query",
                       ["name"] = "brand",
                       ["orig"] = "brand",
-                      ["reqd"] = false,
                       ["type"] = "`$STRING`",
                     },
                     {
-                      ["active"] = true,
                       ["example"] = 10,
                       ["kind"] = "query",
                       ["name"] = "price_greater_than",
                       ["orig"] = "price_greater_than",
-                      ["reqd"] = false,
                       ["type"] = "`$NUMBER`",
                     },
                     {
-                      ["active"] = true,
                       ["example"] = 20,
                       ["kind"] = "query",
                       ["name"] = "price_less_than",
                       ["orig"] = "price_less_than",
-                      ["reqd"] = false,
                       ["type"] = "`$NUMBER`",
                     },
                     {
-                      ["active"] = true,
                       ["example"] = "powder",
                       ["kind"] = "query",
                       ["name"] = "product_category",
                       ["orig"] = "product_category",
-                      ["reqd"] = false,
                       ["type"] = "`$STRING`",
                     },
                     {
-                      ["active"] = true,
                       ["example"] = "vegan",
                       ["kind"] = "query",
                       ["name"] = "product_tag",
                       ["orig"] = "product_tag",
-                      ["reqd"] = false,
                       ["type"] = "`$STRING`",
                     },
                     {
-                      ["active"] = true,
                       ["example"] = "lipstick",
                       ["kind"] = "query",
                       ["name"] = "product_type",
                       ["orig"] = "product_type",
-                      ["reqd"] = false,
                       ["type"] = "`$STRING`",
                     },
                     {
-                      ["active"] = true,
                       ["example"] = 4,
                       ["kind"] = "query",
                       ["name"] = "rating_greater_than",
                       ["orig"] = "rating_greater_than",
-                      ["reqd"] = false,
                       ["type"] = "`$NUMBER`",
                     },
                     {
-                      ["active"] = true,
                       ["example"] = 5,
                       ["kind"] = "query",
                       ["name"] = "rating_less_than",
                       ["orig"] = "rating_less_than",
-                      ["reqd"] = false,
                       ["type"] = "`$NUMBER`",
                     },
                   },
@@ -278,14 +201,11 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["index$"] = 0,
               },
               {
-                ["active"] = true,
                 ["args"] = {
                   ["params"] = {
                     {
-                      ["active"] = true,
                       ["example"] = 1048,
                       ["kind"] = "param",
                       ["name"] = "id",
@@ -312,10 +232,8 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
-                ["index$"] = 1,
               },
             },
-            ["key$"] = "list",
           },
         },
         ["relations"] = {

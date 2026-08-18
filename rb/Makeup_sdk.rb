@@ -28,7 +28,7 @@ class MakeupSDK
     utility = MakeupUtility.new
     @_utility = utility
 
-    config = MakeupConfig.make_config
+    config = MakeupConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,

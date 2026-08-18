@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from makeup_sdk.config import make_config
+from makeup_sdk.config import shared_config
 from makeup_sdk.features import _make_feature
 from makeup_sdk.core.control import MakeupControl
 from makeup_sdk.core.error import MakeupError
@@ -24,7 +24,7 @@ from makeup_sdk.core.spec import MakeupSpec
 
 # True when this SDK was generated with the named feature.
 def has_feature(name):
-    feature = make_config().get("feature")
+    feature = shared_config().get("feature")
     return isinstance(feature, dict) and feature.get(name) is not None
 
 
