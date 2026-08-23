@@ -87,27 +87,27 @@ product = client.Product()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `api_featured_image` | `str` | No |  |
-| `brand` | `str` | No |  |
-| `category` | `str` | No |  |
-| `colour_name` | `str` | No |  |
-| `created_at` | `str` | No |  |
-| `currency` | `str` | No |  |
-| `description` | `str` | No |  |
-| `hex_value` | `str` | No |  |
-| `id` | `int` | No |  |
-| `image_link` | `str` | No |  |
-| `name` | `str` | No |  |
-| `price` | `str` | No |  |
-| `price_sign` | `str` | No |  |
-| `product_api_url` | `str` | No |  |
-| `product_colors` | `list` | No |  |
-| `product_link` | `str` | No |  |
-| `product_type` | `str` | No |  |
-| `rating` | `float` | No |  |
-| `tag_list` | `list` | No |  |
-| `updated_at` | `str` | No |  |
-| `website_link` | `str` | No |  |
+| `api_featured_image` | `str` | No | Featured image URL for API display |
+| `brand` | `str` | No | Brand name of the product |
+| `category` | `str` | No | Category of the product (e.g., powder, cream, liquid) |
+| `colour_name` | `str` | No | Name of the color variant |
+| `created_at` | `str` | No | Timestamp when the product was added to the database |
+| `currency` | `str` | No | Currency code (e.g., USD, CAD, GBP) |
+| `description` | `str` | No | Description of the product |
+| `hex_value` | `str` | No | Hexadecimal color code |
+| `id` | `int` | No | Unique identifier for the product |
+| `image_link` | `str` | No | URL to the product image |
+| `name` | `str` | No | Name of the product |
+| `price` | `str` | No | Price of the product as a string |
+| `price_sign` | `str` | No | Currency symbol |
+| `product_api_url` | `str` | No | API URL to fetch this specific product |
+| `product_colors` | `list` | No | Available color variants of the product |
+| `product_link` | `str` | No | URL to the product page on the retailer's website |
+| `product_type` | `str` | No | Type of the product (e.g., foundation, lipstick, mascara) |
+| `rating` | `float` | No | Average rating of the product (0-5) |
+| `tag_list` | `list` | No | List of tags associated with the product (e.g., Vegan, Organic, Gluten Free) |
+| `updated_at` | `str` | No | Timestamp when the product was last updated |
+| `website_link` | `str` | No | URL to the retailer's website |
 
 ### Operations
 

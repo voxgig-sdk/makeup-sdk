@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "Makeup",
+            "slug": "makeup",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -50,86 +53,107 @@ def make_config():
         "fields": [
           {
             "name": "api_featured_image",
+            "short": "Featured image URL for API display",
             "type": "`$STRING`",
           },
           {
             "name": "brand",
+            "short": "Brand name of the product",
             "type": "`$STRING`",
           },
           {
             "name": "category",
+            "short": "Category of the product (e.g., powder, cream, liquid)",
             "type": "`$STRING`",
           },
           {
             "name": "colour_name",
+            "short": "Name of the color variant",
             "type": "`$STRING`",
           },
           {
             "name": "created_at",
+            "short": "Timestamp when the product was added to the database",
             "type": "`$STRING`",
           },
           {
             "name": "currency",
+            "short": "Currency code (e.g., USD, CAD, GBP)",
             "type": "`$STRING`",
           },
           {
             "name": "description",
+            "short": "Description of the product",
             "type": "`$STRING`",
           },
           {
             "name": "hex_value",
+            "short": "Hexadecimal color code",
             "type": "`$STRING`",
           },
           {
             "name": "id",
+            "short": "Unique identifier for the product",
             "type": "`$INTEGER`",
           },
           {
             "name": "image_link",
+            "short": "URL to the product image",
             "type": "`$STRING`",
           },
           {
             "name": "name",
+            "short": "Name of the product",
             "type": "`$STRING`",
           },
           {
             "name": "price",
+            "short": "Price of the product as a string",
             "type": "`$STRING`",
           },
           {
             "name": "price_sign",
+            "short": "Currency symbol",
             "type": "`$STRING`",
           },
           {
             "name": "product_api_url",
+            "short": "API URL to fetch this specific product",
             "type": "`$STRING`",
           },
           {
             "name": "product_colors",
+            "short": "Available color variants of the product",
             "type": "`$ARRAY`",
           },
           {
             "name": "product_link",
+            "short": "URL to the product page on the retailer's website",
             "type": "`$STRING`",
           },
           {
             "name": "product_type",
+            "short": "Type of the product (e.g., foundation, lipstick, mascara)",
             "type": "`$STRING`",
           },
           {
             "name": "rating",
+            "short": "Average rating of the product (0-5)",
             "type": "`$NUMBER`",
           },
           {
             "name": "tag_list",
+            "short": "List of tags associated with the product (e.g., Vegan, Organic, Gluten Free)",
             "type": "`$ARRAY`",
           },
           {
             "name": "updated_at",
+            "short": "Timestamp when the product was last updated",
             "type": "`$STRING`",
           },
           {
             "name": "website_link",
+            "short": "URL to the retailer's website",
             "type": "`$STRING`",
           },
         ],

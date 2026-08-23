@@ -116,27 +116,27 @@ const product = client.Product()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `api_featured_image` | `string` | No |  |
-| `brand` | `string` | No |  |
-| `category` | `string` | No |  |
-| `colour_name` | `string` | No |  |
-| `created_at` | `string` | No |  |
-| `currency` | `string` | No |  |
-| `description` | `string` | No |  |
-| `hex_value` | `string` | No |  |
-| `id` | `number` | No |  |
-| `image_link` | `string` | No |  |
-| `name` | `string` | No |  |
-| `price` | `string` | No |  |
-| `price_sign` | `string` | No |  |
-| `product_api_url` | `string` | No |  |
-| `product_colors` | `any[]` | No |  |
-| `product_link` | `string` | No |  |
-| `product_type` | `string` | No |  |
-| `rating` | `number` | No |  |
-| `tag_list` | `any[]` | No |  |
-| `updated_at` | `string` | No |  |
-| `website_link` | `string` | No |  |
+| `api_featured_image` | `string` | No | Featured image URL for API display |
+| `brand` | `string` | No | Brand name of the product |
+| `category` | `string` | No | Category of the product (e.g., powder, cream, liquid) |
+| `colour_name` | `string` | No | Name of the color variant |
+| `created_at` | `string` | No | Timestamp when the product was added to the database |
+| `currency` | `string` | No | Currency code (e.g., USD, CAD, GBP) |
+| `description` | `string` | No | Description of the product |
+| `hex_value` | `string` | No | Hexadecimal color code |
+| `id` | `number` | No | Unique identifier for the product |
+| `image_link` | `string` | No | URL to the product image |
+| `name` | `string` | No | Name of the product |
+| `price` | `string` | No | Price of the product as a string |
+| `price_sign` | `string` | No | Currency symbol |
+| `product_api_url` | `string` | No | API URL to fetch this specific product |
+| `product_colors` | `any[]` | No | Available color variants of the product |
+| `product_link` | `string` | No | URL to the product page on the retailer's website |
+| `product_type` | `string` | No | Type of the product (e.g., foundation, lipstick, mascara) |
+| `rating` | `number` | No | Average rating of the product (0-5) |
+| `tag_list` | `any[]` | No | List of tags associated with the product (e.g., Vegan, Organic, Gluten Free) |
+| `updated_at` | `string` | No | Timestamp when the product was last updated |
+| `website_link` | `string` | No | URL to the retailer's website |
 
 ### Actions
 

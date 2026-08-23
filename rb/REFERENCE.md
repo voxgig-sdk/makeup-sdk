@@ -93,27 +93,27 @@ product = client.Product
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `api_featured_image` | `String` | No |  |
-| `brand` | `String` | No |  |
-| `category` | `String` | No |  |
-| `colour_name` | `String` | No |  |
-| `created_at` | `String` | No |  |
-| `currency` | `String` | No |  |
-| `description` | `String` | No |  |
-| `hex_value` | `String` | No |  |
-| `id` | `Integer` | No |  |
-| `image_link` | `String` | No |  |
-| `name` | `String` | No |  |
-| `price` | `String` | No |  |
-| `price_sign` | `String` | No |  |
-| `product_api_url` | `String` | No |  |
-| `product_colors` | `Array` | No |  |
-| `product_link` | `String` | No |  |
-| `product_type` | `String` | No |  |
-| `rating` | `Float` | No |  |
-| `tag_list` | `Array` | No |  |
-| `updated_at` | `String` | No |  |
-| `website_link` | `String` | No |  |
+| `api_featured_image` | `String` | No | Featured image URL for API display |
+| `brand` | `String` | No | Brand name of the product |
+| `category` | `String` | No | Category of the product (e.g., powder, cream, liquid) |
+| `colour_name` | `String` | No | Name of the color variant |
+| `created_at` | `String` | No | Timestamp when the product was added to the database |
+| `currency` | `String` | No | Currency code (e.g., USD, CAD, GBP) |
+| `description` | `String` | No | Description of the product |
+| `hex_value` | `String` | No | Hexadecimal color code |
+| `id` | `Integer` | No | Unique identifier for the product |
+| `image_link` | `String` | No | URL to the product image |
+| `name` | `String` | No | Name of the product |
+| `price` | `String` | No | Price of the product as a string |
+| `price_sign` | `String` | No | Currency symbol |
+| `product_api_url` | `String` | No | API URL to fetch this specific product |
+| `product_colors` | `Array` | No | Available color variants of the product |
+| `product_link` | `String` | No | URL to the product page on the retailer's website |
+| `product_type` | `String` | No | Type of the product (e.g., foundation, lipstick, mascara) |
+| `rating` | `Float` | No | Average rating of the product (0-5) |
+| `tag_list` | `Array` | No | List of tags associated with the product (e.g., Vegan, Organic, Gluten Free) |
+| `updated_at` | `String` | No | Timestamp when the product was last updated |
+| `website_link` | `String` | No | URL to the retailer's website |
 
 ### Operations
 

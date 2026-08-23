@@ -237,27 +237,27 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `api_featured_image` |  |
-| `brand` |  |
-| `category` |  |
-| `colour_name` |  |
-| `created_at` |  |
-| `currency` |  |
-| `description` |  |
-| `hex_value` |  |
-| `id` |  |
-| `image_link` |  |
-| `name` |  |
-| `price` |  |
-| `price_sign` |  |
-| `product_api_url` |  |
-| `product_colors` |  |
-| `product_link` |  |
-| `product_type` |  |
-| `rating` |  |
-| `tag_list` |  |
-| `updated_at` |  |
-| `website_link` |  |
+| `api_featured_image` | Featured image URL for API display |
+| `brand` | Brand name of the product |
+| `category` | Category of the product (e.g., powder, cream, liquid) |
+| `colour_name` | Name of the color variant |
+| `created_at` | Timestamp when the product was added to the database |
+| `currency` | Currency code (e.g., USD, CAD, GBP) |
+| `description` | Description of the product |
+| `hex_value` | Hexadecimal color code |
+| `id` | Unique identifier for the product |
+| `image_link` | URL to the product image |
+| `name` | Name of the product |
+| `price` | Price of the product as a string |
+| `price_sign` | Currency symbol |
+| `product_api_url` | API URL to fetch this specific product |
+| `product_colors` | Available color variants of the product |
+| `product_link` | URL to the product page on the retailer's website |
+| `product_type` | Type of the product (e.g., foundation, lipstick, mascara) |
+| `rating` | Average rating of the product (0-5) |
+| `tag_list` | List of tags associated with the product (e.g., Vegan, Organic, Gluten Free) |
+| `updated_at` | Timestamp when the product was last updated |
+| `website_link` | URL to the retailer's website |
 
 Operations: List.
 
@@ -282,27 +282,27 @@ Create an instance: `product = client.Product`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `api_featured_image` | `String` |  |
-| `brand` | `String` |  |
-| `category` | `String` |  |
-| `colour_name` | `String` |  |
-| `created_at` | `String` |  |
-| `currency` | `String` |  |
-| `description` | `String` |  |
-| `hex_value` | `String` |  |
-| `id` | `Integer` |  |
-| `image_link` | `String` |  |
-| `name` | `String` |  |
-| `price` | `String` |  |
-| `price_sign` | `String` |  |
-| `product_api_url` | `String` |  |
-| `product_colors` | `Array` |  |
-| `product_link` | `String` |  |
-| `product_type` | `String` |  |
-| `rating` | `Float` |  |
-| `tag_list` | `Array` |  |
-| `updated_at` | `String` |  |
-| `website_link` | `String` |  |
+| `api_featured_image` | `String` | Featured image URL for API display |
+| `brand` | `String` | Brand name of the product |
+| `category` | `String` | Category of the product (e.g., powder, cream, liquid) |
+| `colour_name` | `String` | Name of the color variant |
+| `created_at` | `String` | Timestamp when the product was added to the database |
+| `currency` | `String` | Currency code (e.g., USD, CAD, GBP) |
+| `description` | `String` | Description of the product |
+| `hex_value` | `String` | Hexadecimal color code |
+| `id` | `Integer` | Unique identifier for the product |
+| `image_link` | `String` | URL to the product image |
+| `name` | `String` | Name of the product |
+| `price` | `String` | Price of the product as a string |
+| `price_sign` | `String` | Currency symbol |
+| `product_api_url` | `String` | API URL to fetch this specific product |
+| `product_colors` | `Array` | Available color variants of the product |
+| `product_link` | `String` | URL to the product page on the retailer's website |
+| `product_type` | `String` | Type of the product (e.g., foundation, lipstick, mascara) |
+| `rating` | `Float` | Average rating of the product (0-5) |
+| `tag_list` | `Array` | List of tags associated with the product (e.g., Vegan, Organic, Gluten Free) |
+| `updated_at` | `String` | Timestamp when the product was last updated |
+| `website_link` | `String` | URL to the retailer's website |
 
 #### Example: List
 

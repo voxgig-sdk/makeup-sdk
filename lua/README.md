@@ -231,27 +231,27 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `api_featured_image` |  |
-| `brand` |  |
-| `category` |  |
-| `colour_name` |  |
-| `created_at` |  |
-| `currency` |  |
-| `description` |  |
-| `hex_value` |  |
-| `id` |  |
-| `image_link` |  |
-| `name` |  |
-| `price` |  |
-| `price_sign` |  |
-| `product_api_url` |  |
-| `product_colors` |  |
-| `product_link` |  |
-| `product_type` |  |
-| `rating` |  |
-| `tag_list` |  |
-| `updated_at` |  |
-| `website_link` |  |
+| `api_featured_image` | Featured image URL for API display |
+| `brand` | Brand name of the product |
+| `category` | Category of the product (e.g., powder, cream, liquid) |
+| `colour_name` | Name of the color variant |
+| `created_at` | Timestamp when the product was added to the database |
+| `currency` | Currency code (e.g., USD, CAD, GBP) |
+| `description` | Description of the product |
+| `hex_value` | Hexadecimal color code |
+| `id` | Unique identifier for the product |
+| `image_link` | URL to the product image |
+| `name` | Name of the product |
+| `price` | Price of the product as a string |
+| `price_sign` | Currency symbol |
+| `product_api_url` | API URL to fetch this specific product |
+| `product_colors` | Available color variants of the product |
+| `product_link` | URL to the product page on the retailer's website |
+| `product_type` | Type of the product (e.g., foundation, lipstick, mascara) |
+| `rating` | Average rating of the product (0-5) |
+| `tag_list` | List of tags associated with the product (e.g., Vegan, Organic, Gluten Free) |
+| `updated_at` | Timestamp when the product was last updated |
+| `website_link` | URL to the retailer's website |
 
 Operations: List.
 
@@ -276,27 +276,27 @@ Create an instance: `local product = client:Product(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `api_featured_image` | `string` |  |
-| `brand` | `string` |  |
-| `category` | `string` |  |
-| `colour_name` | `string` |  |
-| `created_at` | `string` |  |
-| `currency` | `string` |  |
-| `description` | `string` |  |
-| `hex_value` | `string` |  |
-| `id` | `number` |  |
-| `image_link` | `string` |  |
-| `name` | `string` |  |
-| `price` | `string` |  |
-| `price_sign` | `string` |  |
-| `product_api_url` | `string` |  |
-| `product_colors` | `table` |  |
-| `product_link` | `string` |  |
-| `product_type` | `string` |  |
-| `rating` | `number` |  |
-| `tag_list` | `table` |  |
-| `updated_at` | `string` |  |
-| `website_link` | `string` |  |
+| `api_featured_image` | `string` | Featured image URL for API display |
+| `brand` | `string` | Brand name of the product |
+| `category` | `string` | Category of the product (e.g., powder, cream, liquid) |
+| `colour_name` | `string` | Name of the color variant |
+| `created_at` | `string` | Timestamp when the product was added to the database |
+| `currency` | `string` | Currency code (e.g., USD, CAD, GBP) |
+| `description` | `string` | Description of the product |
+| `hex_value` | `string` | Hexadecimal color code |
+| `id` | `number` | Unique identifier for the product |
+| `image_link` | `string` | URL to the product image |
+| `name` | `string` | Name of the product |
+| `price` | `string` | Price of the product as a string |
+| `price_sign` | `string` | Currency symbol |
+| `product_api_url` | `string` | API URL to fetch this specific product |
+| `product_colors` | `table` | Available color variants of the product |
+| `product_link` | `string` | URL to the product page on the retailer's website |
+| `product_type` | `string` | Type of the product (e.g., foundation, lipstick, mascara) |
+| `rating` | `number` | Average rating of the product (0-5) |
+| `tag_list` | `table` | List of tags associated with the product (e.g., Vegan, Organic, Gluten Free) |
+| `updated_at` | `string` | Timestamp when the product was last updated |
+| `website_link` | `string` | URL to the retailer's website |
 
 #### Example: List
 

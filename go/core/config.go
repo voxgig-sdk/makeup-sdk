@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "Makeup",
+			"slug": "makeup",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -33,86 +36,107 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "api_featured_image",
+						"short": "Featured image URL for API display",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "brand",
+						"short": "Brand name of the product",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "category",
+						"short": "Category of the product (e.g., powder, cream, liquid)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "colour_name",
+						"short": "Name of the color variant",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "created_at",
+						"short": "Timestamp when the product was added to the database",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "currency",
+						"short": "Currency code (e.g., USD, CAD, GBP)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "description",
+						"short": "Description of the product",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "hex_value",
+						"short": "Hexadecimal color code",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "id",
+						"short": "Unique identifier for the product",
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
 						"name": "image_link",
+						"short": "URL to the product image",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "name",
+						"short": "Name of the product",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "price",
+						"short": "Price of the product as a string",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "price_sign",
+						"short": "Currency symbol",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "product_api_url",
+						"short": "API URL to fetch this specific product",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "product_colors",
+						"short": "Available color variants of the product",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "product_link",
+						"short": "URL to the product page on the retailer's website",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "product_type",
+						"short": "Type of the product (e.g., foundation, lipstick, mascara)",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "rating",
+						"short": "Average rating of the product (0-5)",
 						"type": "`$NUMBER`",
 					},
 					map[string]any{
 						"name": "tag_list",
+						"short": "List of tags associated with the product (e.g., Vegan, Organic, Gluten Free)",
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
 						"name": "updated_at",
+						"short": "Timestamp when the product was last updated",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "website_link",
+						"short": "URL to the retailer's website",
 						"type": "`$STRING`",
 					},
 				},
