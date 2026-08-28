@@ -41,26 +41,13 @@ class Product
 /** Request payload for Product#list. */
 class ProductListMatch
 {
-    public ?string $api_featured_image = null;
     public ?string $brand = null;
-    public ?string $category = null;
-    public ?string $colour_name = null;
-    public ?string $created_at = null;
-    public ?string $currency = null;
-    public ?string $description = null;
-    public ?string $hex_value = null;
-    public ?int $id = null;
-    public ?string $image_link = null;
-    public ?string $name = null;
-    public ?string $price = null;
-    public ?string $price_sign = null;
-    public ?string $product_api_url = null;
-    public ?array $product_colors = null;
-    public ?string $product_link = null;
+    public ?float $price_greater_than = null;
+    public ?float $price_less_than = null;
+    public ?string $product_category = null;
+    public ?string $product_tag = null;
     public ?string $product_type = null;
-    public ?float $rating = null;
-    public ?array $tag_list = null;
-    public ?string $updated_at = null;
-    public ?string $website_link = null;
+    public ?float $rating_greater_than = null;
+    public ?float $rating_less_than = null;
 }
 
