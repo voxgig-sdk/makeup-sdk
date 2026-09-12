@@ -64,6 +64,7 @@ module MakeupConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "date-time",
               "name" => "created_at",
               "short" => "Timestamp when the product was added to the database",
               "type" => "`$STRING`",
@@ -89,6 +90,7 @@ module MakeupConfig
               "type" => "`$INTEGER`",
             },
             {
+              "format" => "uri",
               "name" => "image_link",
               "short" => "URL to the product image",
               "type" => "`$STRING`",
@@ -109,6 +111,7 @@ module MakeupConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "product_api_url",
               "short" => "API URL to fetch this specific product",
               "type" => "`$STRING`",
@@ -119,6 +122,7 @@ module MakeupConfig
               "type" => "`$ARRAY`",
             },
             {
+              "format" => "uri",
               "name" => "product_link",
               "short" => "URL to the product page on the retailer's website",
               "type" => "`$STRING`",
@@ -129,6 +133,7 @@ module MakeupConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "float",
               "name" => "rating",
               "short" => "Average rating of the product (0-5)",
               "type" => "`$NUMBER`",
@@ -139,16 +144,22 @@ module MakeupConfig
               "type" => "`$ARRAY`",
             },
             {
+              "format" => "date-time",
               "name" => "updated_at",
               "short" => "Timestamp when the product was last updated",
               "type" => "`$STRING`",
             },
             {
+              "format" => "uri",
               "name" => "website_link",
               "short" => "URL to the retailer's website",
               "type" => "`$STRING`",
             },
           ],
+          "id" => {
+            "field" => "id",
+            "name" => "id",
+          },
           "name" => "product",
           "op" => {
             "list" => {
@@ -219,8 +230,10 @@ module MakeupConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/products.json",
-                  "parts" => [
-                    "products.json",
+                  "segments" => [
+                    {
+                      "lit" => "products.json",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -238,6 +251,9 @@ module MakeupConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "products.json",
+                  ],
                 },
                 {
                   "args" => {
@@ -255,9 +271,13 @@ module MakeupConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/products/{id}.json",
-                  "parts" => [
-                    "products",
-                    "{id}.json",
+                  "segments" => [
+                    {
+                      "lit" => "products",
+                    },
+                    {
+                      "lit" => "{id}.json",
+                    },
                   ],
                   "select" => {
                     "$action" => "id",
@@ -269,16 +289,16 @@ module MakeupConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "products",
+                    "{id}.json",
+                  ],
                 },
               ],
             },
           },
           "relations" => {
-            "ancestors" => [
-              [
-                "product",
-              ],
-            ],
+            "ancestors" => [],
           },
         },
       },

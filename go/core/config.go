@@ -56,6 +56,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "created_at",
 						"short": "Timestamp when the product was added to the database",
 						"type": "`$STRING`",
@@ -81,6 +82,7 @@ func MakeConfig() map[string]any {
 						"type": "`$INTEGER`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "image_link",
 						"short": "URL to the product image",
 						"type": "`$STRING`",
@@ -101,6 +103,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "product_api_url",
 						"short": "API URL to fetch this specific product",
 						"type": "`$STRING`",
@@ -111,6 +114,7 @@ func MakeConfig() map[string]any {
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "product_link",
 						"short": "URL to the product page on the retailer's website",
 						"type": "`$STRING`",
@@ -121,6 +125,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "float",
 						"name": "rating",
 						"short": "Average rating of the product (0-5)",
 						"type": "`$NUMBER`",
@@ -131,15 +136,21 @@ func MakeConfig() map[string]any {
 						"type": "`$ARRAY`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "updated_at",
 						"short": "Timestamp when the product was last updated",
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "uri",
 						"name": "website_link",
 						"short": "URL to the retailer's website",
 						"type": "`$STRING`",
 					},
+				},
+				"id": map[string]any{
+					"field": "id",
+					"name": "id",
 				},
 				"name": "product",
 				"op": map[string]any{
@@ -211,8 +222,10 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/products.json",
-								"parts": []any{
-									"products.json",
+								"segments": []any{
+									map[string]any{
+										"lit": "products.json",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -229,6 +242,9 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
+								},
+								"parts": []any{
+									"products.json",
 								},
 							},
 							map[string]any{
@@ -247,9 +263,13 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/products/{id}.json",
-								"parts": []any{
-									"products",
-									"{id}.json",
+								"segments": []any{
+									map[string]any{
+										"lit": "products",
+									},
+									map[string]any{
+										"lit": "{id}.json",
+									},
 								},
 								"select": map[string]any{
 									"$action": "id",
@@ -261,20 +281,31 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
+								"parts": []any{
+									"products",
+									"{id}.json",
+								},
 							},
 						},
 					},
 				},
 				"relations": map[string]any{
-					"ancestors": []any{
-						[]any{
-							"product",
-						},
-					},
+					"ancestors": []any{},
 				},
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (
