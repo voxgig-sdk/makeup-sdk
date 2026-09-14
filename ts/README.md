@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { MakeupSDK } from '@voxgig-sdk/makeup'
+import { MakeupSDK } from '@voxgig-sdk/makeup-sdk'
 
 const client = new MakeupSDK()
 ```
@@ -443,7 +443,7 @@ makeup/
 Import the SDK from the package root:
 
 ```ts
-import { MakeupSDK } from '@voxgig-sdk/makeup'
+import { MakeupSDK } from '@voxgig-sdk/makeup-sdk'
 ```
 
 ### Entity state

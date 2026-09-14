@@ -105,7 +105,7 @@ local results, err = client:Product():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/makeup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/makeup-sdk/releases) |
+| TypeScript | `@voxgig-sdk/makeup-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/makeup-sdk/releases) |
 | Python | `voxgig-sdk-makeup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/makeup-sdk/releases) |
 | PHP | `voxgig-sdk/makeup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/makeup-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/makeup-sdk/go` | `go get github.com/voxgig-sdk/makeup-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Product():list()
 ### TypeScript
 
 ```ts
-import { MakeupSDK } from '@voxgig-sdk/makeup'
+import { MakeupSDK } from '@voxgig-sdk/makeup-sdk'
 
 const client = new MakeupSDK()
 
