@@ -1,12 +1,18 @@
 # Makeup SDK feature factory
 
 from makeup_sdk.feature.base_feature import MakeupBaseFeature
+from makeup_sdk.feature.ratelimit_feature import MakeupRatelimitFeature
+from makeup_sdk.feature.retry_feature import MakeupRetryFeature
 from makeup_sdk.feature.test_feature import MakeupTestFeature
+from makeup_sdk.feature.timeout_feature import MakeupTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: MakeupBaseFeature(),
+    "ratelimit": lambda: MakeupRatelimitFeature(),
+    "retry": lambda: MakeupRetryFeature(),
     "test": lambda: MakeupTestFeature(),
+    "timeout": lambda: MakeupTimeoutFeature(),
 }
 
 
