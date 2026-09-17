@@ -105,12 +105,12 @@ local results, err = client:Product():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/makeup-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/makeup-sdk/releases) |
-| Python | `voxgig-sdk-makeup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/makeup-sdk/releases) |
-| PHP | `voxgig-sdk/makeup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/makeup-sdk/releases) |
+| TypeScript | `@voxgig-sdk/makeup-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/makeup-sdk/tags) |
+| Python | `voxgig-sdk-makeup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/makeup-sdk/tags) |
+| PHP | `voxgig-sdk/makeup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/makeup-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/makeup-sdk/go` | `go get github.com/voxgig-sdk/makeup-sdk/go@latest` |
-| Ruby | `voxgig-sdk-makeup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/makeup-sdk/releases) |
-| Lua | `voxgig-sdk-makeup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/makeup-sdk/releases) |
+| Ruby | `voxgig-sdk-makeup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/makeup-sdk/tags) |
+| Lua | `voxgig-sdk-makeup` | publish pending — [install from git tag](https://github.com/voxgig-sdk/makeup-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/makeup-sdk/go-cli` | `go install github.com/voxgig-sdk/makeup-sdk/go-cli/cmd/makeup@latest` |
 | Go MCP server | `github.com/voxgig-sdk/makeup-sdk/go-mcp` | `go get github.com/voxgig-sdk/makeup-sdk/go-mcp@latest` |
 

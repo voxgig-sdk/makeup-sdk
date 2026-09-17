@@ -105,11 +105,6 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
-						"name": "colour_name",
-						"short": "Name of the color variant",
-						"type": "`$STRING`",
-					},
-					map[string]any{
 						"format": "date-time",
 						"name": "created_at",
 						"short": "Timestamp when the product was added to the database",
@@ -123,11 +118,6 @@ func MakeConfig() map[string]any {
 					map[string]any{
 						"name": "description",
 						"short": "Description of the product",
-						"type": "`$STRING`",
-					},
-					map[string]any{
-						"name": "hex_value",
-						"short": "Hexadecimal color code",
 						"type": "`$STRING`",
 					},
 					map[string]any{

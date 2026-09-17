@@ -9,11 +9,9 @@ export interface Product {
   api_featured_image?: string
   brand?: string
   category?: string
-  colour_name?: string
   created_at?: string
   currency?: string
   description?: string
-  hex_value?: string
   id?: number
   image_link?: string
   name?: string

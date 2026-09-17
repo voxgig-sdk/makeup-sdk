@@ -240,11 +240,9 @@ returns a result `Hash` with these keys:
 | `api_featured_image` | Featured image URL for API display |
 | `brand` | Brand name of the product |
 | `category` | Category of the product (e.g., powder, cream, liquid) |
-| `colour_name` | Name of the color variant |
 | `created_at` | Timestamp when the product was added to the database |
 | `currency` | Currency code (e.g., USD, CAD, GBP) |
 | `description` | Description of the product |
-| `hex_value` | Hexadecimal color code |
 | `id` | Unique identifier for the product |
 | `image_link` | URL to the product image |
 | `name` | Name of the product |
@@ -285,11 +283,9 @@ Create an instance: `product = client.Product`
 | `api_featured_image` | `String` | Featured image URL for API display |
 | `brand` | `String` | Brand name of the product |
 | `category` | `String` | Category of the product (e.g., powder, cream, liquid) |
-| `colour_name` | `String` | Name of the color variant |
 | `created_at` | `String` | Timestamp when the product was added to the database |
 | `currency` | `String` | Currency code (e.g., USD, CAD, GBP) |
 | `description` | `String` | Description of the product |
-| `hex_value` | `String` | Hexadecimal color code |
 | `id` | `Integer` | Unique identifier for the product |
 | `image_link` | `String` | URL to the product image |
 | `name` | `String` | Name of the product |
@@ -454,6 +450,7 @@ Use `Helpers.to_map()` to safely validate that a value is a hash.
 rb/
 ├── Makeup_sdk.rb       -- Main SDK module
 ├── config.rb                  -- Configuration
+├── schema.rb                  -- Generated option + entity specs
 ├── features.rb                -- Feature factory
 ├── core/                      -- Core types and context
 ├── entity/                    -- Entity implementations

@@ -18,11 +18,9 @@ class Product
     public ?string $api_featured_image = null;
     public ?string $brand = null;
     public ?string $category = null;
-    public ?string $colour_name = null;
     public ?string $created_at = null;
     public ?string $currency = null;
     public ?string $description = null;
-    public ?string $hex_value = null;
     public ?int $id = null;
     public ?string $image_link = null;
     public ?string $name = null;

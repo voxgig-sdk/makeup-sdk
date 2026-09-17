@@ -119,11 +119,9 @@ const product = client.Product()
 | `api_featured_image` | `string` | No | Featured image URL for API display |
 | `brand` | `string` | No | Brand name of the product |
 | `category` | `string` | No | Category of the product (e.g., powder, cream, liquid) |
-| `colour_name` | `string` | No | Name of the color variant |
 | `created_at` | `string` | No | Timestamp when the product was added to the database |
 | `currency` | `string` | No | Currency code (e.g., USD, CAD, GBP) |
 | `description` | `string` | No | Description of the product |
-| `hex_value` | `string` | No | Hexadecimal color code |
 | `id` | `number` | No | Unique identifier for the product |
 | `image_link` | `string` | No | URL to the product image |
 | `name` | `string` | No | Name of the product |

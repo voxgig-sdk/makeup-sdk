@@ -20,11 +20,9 @@ class Product(TypedDict, total=False):
     api_featured_image: str
     brand: str
     category: str
-    colour_name: str
     created_at: str
     currency: str
     description: str
-    hex_value: str
     id: int
     image_link: str
     name: str

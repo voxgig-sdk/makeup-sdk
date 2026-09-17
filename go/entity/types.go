@@ -17,11 +17,9 @@ type Product struct {
 	ApiFeaturedImage *string `json:"api_featured_image,omitempty"`
 	Brand *string `json:"brand,omitempty"`
 	Category *string `json:"category,omitempty"`
-	ColourName *string `json:"colour_name,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	Currency *string `json:"currency,omitempty"`
 	Description *string `json:"description,omitempty"`
-	HexValue *string `json:"hex_value,omitempty"`
 	Id *int `json:"id,omitempty"`
 	ImageLink *string `json:"image_link,omitempty"`
 	Name *string `json:"name,omitempty"`

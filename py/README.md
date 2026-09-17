@@ -246,11 +246,9 @@ On error, `ok` is `False` and `err` contains the error value.
 | `api_featured_image` | Featured image URL for API display |
 | `brand` | Brand name of the product |
 | `category` | Category of the product (e.g., powder, cream, liquid) |
-| `colour_name` | Name of the color variant |
 | `created_at` | Timestamp when the product was added to the database |
 | `currency` | Currency code (e.g., USD, CAD, GBP) |
 | `description` | Description of the product |
-| `hex_value` | Hexadecimal color code |
 | `id` | Unique identifier for the product |
 | `image_link` | URL to the product image |
 | `name` | Name of the product |
@@ -291,11 +289,9 @@ Create an instance: `product = client.Product()`
 | `api_featured_image` | `str` | Featured image URL for API display |
 | `brand` | `str` | Brand name of the product |
 | `category` | `str` | Category of the product (e.g., powder, cream, liquid) |
-| `colour_name` | `str` | Name of the color variant |
 | `created_at` | `str` | Timestamp when the product was added to the database |
 | `currency` | `str` | Currency code (e.g., USD, CAD, GBP) |
 | `description` | `str` | Description of the product |
-| `hex_value` | `str` | Hexadecimal color code |
 | `id` | `int` | Unique identifier for the product |
 | `image_link` | `str` | URL to the product image |
 | `name` | `str` | Name of the product |
@@ -459,6 +455,7 @@ Use `helpers.to_map()` to safely validate that a value is a dict.
 py/
 ├── makeup_sdk.py         -- Main SDK module
 ├── config.py                    -- Configuration
+├── schema.py                    -- Generated option + entity specs
 ├── features.py                  -- Feature factory
 ├── core/                        -- Core types and context
 ├── entity/                      -- Entity implementations

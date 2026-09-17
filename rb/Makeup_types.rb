@@ -19,9 +19,6 @@
 # @!attribute [rw] category
 #   @return [String, nil]
 #
-# @!attribute [rw] colour_name
-#   @return [String, nil]
-#
 # @!attribute [rw] created_at
 #   @return [String, nil]
 #
@@ -29,9 +26,6 @@
 #   @return [String, nil]
 #
 # @!attribute [rw] description
-#   @return [String, nil]
-#
-# @!attribute [rw] hex_value
 #   @return [String, nil]
 #
 # @!attribute [rw] id
@@ -76,11 +70,9 @@ Product = Struct.new(
   :api_featured_image,
   :brand,
   :category,
-  :colour_name,
   :created_at,
   :currency,
   :description,
-  :hex_value,
   :id,
   :image_link,
   :name,

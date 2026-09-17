@@ -234,11 +234,9 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `api_featured_image` | Featured image URL for API display |
 | `brand` | Brand name of the product |
 | `category` | Category of the product (e.g., powder, cream, liquid) |
-| `colour_name` | Name of the color variant |
 | `created_at` | Timestamp when the product was added to the database |
 | `currency` | Currency code (e.g., USD, CAD, GBP) |
 | `description` | Description of the product |
-| `hex_value` | Hexadecimal color code |
 | `id` | Unique identifier for the product |
 | `image_link` | URL to the product image |
 | `name` | Name of the product |
@@ -279,11 +277,9 @@ Create an instance: `local product = client:Product(nil)`
 | `api_featured_image` | `string` | Featured image URL for API display |
 | `brand` | `string` | Brand name of the product |
 | `category` | `string` | Category of the product (e.g., powder, cream, liquid) |
-| `colour_name` | `string` | Name of the color variant |
 | `created_at` | `string` | Timestamp when the product was added to the database |
 | `currency` | `string` | Currency code (e.g., USD, CAD, GBP) |
 | `description` | `string` | Description of the product |
-| `hex_value` | `string` | Hexadecimal color code |
 | `id` | `number` | Unique identifier for the product |
 | `image_link` | `string` | URL to the product image |
 | `name` | `string` | Name of the product |
@@ -447,6 +443,7 @@ Use `helpers.to_map()` to safely validate that a value is a table.
 lua/
 ├── makeup_sdk.lua    -- Main SDK module
 ├── config.lua               -- Configuration
+├── schema.lua               -- Generated option + entity specs
 ├── features.lua             -- Feature factory
 ├── core/                    -- Core types and context
 ├── entity/                  -- Entity implementations

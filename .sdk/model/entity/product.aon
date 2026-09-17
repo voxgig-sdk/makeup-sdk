@@ -24,12 +24,6 @@ main: kit: entity: product: {
       type: "`$STRING`"
     }
     {
-      name: "colour_name"
-      req: false
-      short: "Name of the color variant"
-      type: "`$STRING`"
-    }
-    {
       format: "date-time"
       name: "created_at"
       req: false
@@ -46,12 +40,6 @@ main: kit: entity: product: {
       name: "description"
       req: false
       short: "Description of the product"
-      type: "`$STRING`"
-    }
-    {
-      name: "hex_value"
-      req: false
-      short: "Hexadecimal color code"
       type: "`$STRING`"
     }
     {

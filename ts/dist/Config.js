@@ -128,11 +128,6 @@ class Config {
                     "type": "`$STRING`"
                 },
                 {
-                    "name": "colour_name",
-                    "short": "Name of the color variant",
-                    "type": "`$STRING`"
-                },
-                {
                     "format": "date-time",
                     "name": "created_at",
                     "short": "Timestamp when the product was added to the database",
@@ -146,11 +141,6 @@ class Config {
                 {
                     "name": "description",
                     "short": "Description of the product",
-                    "type": "`$STRING`"
-                },
-                {
-                    "name": "hex_value",
-                    "short": "Hexadecimal color code",
                     "type": "`$STRING`"
                 },
                 {

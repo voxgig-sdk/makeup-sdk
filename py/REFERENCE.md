@@ -90,11 +90,9 @@ product = client.Product()
 | `api_featured_image` | `str` | No | Featured image URL for API display |
 | `brand` | `str` | No | Brand name of the product |
 | `category` | `str` | No | Category of the product (e.g., powder, cream, liquid) |
-| `colour_name` | `str` | No | Name of the color variant |
 | `created_at` | `str` | No | Timestamp when the product was added to the database |
 | `currency` | `str` | No | Currency code (e.g., USD, CAD, GBP) |
 | `description` | `str` | No | Description of the product |
-| `hex_value` | `str` | No | Hexadecimal color code |
 | `id` | `int` | No | Unique identifier for the product |
 | `image_link` | `str` | No | URL to the product image |
 | `name` | `str` | No | Name of the product |
